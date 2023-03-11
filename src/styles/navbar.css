@@ -29,11 +29,15 @@ body{
   #a {
       border: none;
       background-color: transparent;
+      align-items: center;
+      padding: 0px 5px;
+
       /* margin-right: 10px; */
   }
+
   
   .burger{
-      margin-left: 8px;
+      /* margin-left: 8px; */
       border: none;
       background: transparent;
   }
@@ -62,43 +66,57 @@ body{
   }
   
   .nav-search input {
-      width: 290px;
-      height: 44px;
-      padding-left: 46px;
-      padding-right: 46px;
+      width: 328px;
+      height: auto; 
       font-size: 16px;
       border: 0;
       /* border-radius: 8px; */
-      background: NONE;
+      /* position: absolute; */
+      background: url(data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D) transparent;
       color: inherit;
       font-family: inherit;
       outline: none;
+      margin-left: -58px;
+      margin-bottom: 4px;
+  }
+
+  .search-box{
+    margin: 0px 96px 0px 56px;
   }
   
   .filter{
       height: 20px;
-      top: 25%;
+      /* top: 25%; */
       right: 16px;
-      font-size: 20px;
-      color: inherit;
-      position: absolute;
-      padding-right: 10px;
+      /* font-size: 20px; */
+      /* color: inherit; */
+      /* position: absolute; */
+      padding: 8px;
+      margin: 3px;
+  }
+
+  .search{
+    height: 18px;
+    padding: 8px;
+    margin: 3px;
   }
   
   .nav-logo-text{
       margin-left: 10px;
-      font-size: 20px;
+      font-size: 25px;
       font-family: sans-serif;
       align-self: flex-end;
-      padding-bottom: 5px;
+      padding-bottom: 10px;
       text-decoration: none;
+      color: white;
   }
   
   .nav-icons{
-      width:278px;
+  
+      /* width:278px; */
       vertical-align: middle;
       display: flex;
-      justify-content: space-between;
+      /* justify-content: space-between; */
       align-items: center;
   }
   
@@ -267,6 +285,8 @@ body{
     }
     
     .active-dropdown a {
+      margin-left: 15px;
+      text-align: left;
       color: black;
       /* padding: 12px 16px; */
       text-decoration: none;
@@ -300,6 +320,8 @@ body{
       margin: 0 0 3 2;
       align-self: center;
       font-size: 24px;
+      margin-bottom:2px;
+      margin-left: 1px;
     }
   
     .options{
@@ -422,7 +444,46 @@ body{
       align-items: center;
       padding-bottom: 30px; 
     }
+
+    .support-dropdown {
+      /* height: 450px; */
+      /* width: 1000px; */
+      
+      
+      /* width: 320px; */
+      top: 210px;
+      right: 248px;
+      display: none;  
+      position: absolute;
+      border-radius: 7px;
+
+      /* margin-top: 5px; */
+      
+      /* background-color: #f1f1f1; */
+      /* width: 250px; */
+      /* overflow: auto; */
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      /* align-items: center; */
+      align-content: center;
+      justify-self: center;
+      align-items: center;
+    }
+
+    .support-text{
+      color: black;
+      display: flex;
+      flex-direction:column;
+      background-color: white;
+      position: relative;
+      text-align: left;
+      /* margin-left: 5px; */
+      font-family: sans-serif;
+      font-size: 14px;
+      padding: 6px 30px;
+    }
   
+    
     .show {display: block;}
   
     /* how to inspect the stuff in dropdwon*/
