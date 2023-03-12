@@ -1,0 +1,136 @@
+/* Global Style */
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+
+/* Left Bar */
+
+
+.left-bar{
+    width: 3rem;
+    height: 85.7vh;
+    transition: 0.1s;
+    padding:1rem 0rem 0rem 1.5rem;
+    background-color: #f6f8fc;    
+}
+
+
+ .left-bar:hover{
+    width: 14.4rem;
+}
+
+
+.features{
+    padding: 1rem 0rem;
+}
+
+
+#compose{
+    background-color:rgb(194,231,255 );
+    width: 25px;
+    padding: 13.5px 15px;
+    border-radius: 12px;
+    margin-left:-15px;
+}
+
+
+.compose-hidden{
+    display: none;
+}
+
+
+.left-bar:hover .compose-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110px !important;
+    font-size: 15px ;
+
+
+}
+
+
+.left-bar:hover .compose-hidden{
+    display: block;
+    color:#465b6c;
+}
+
+
+.feature-items{
+    position: relative;
+    margin-bottom: 0.1rem;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    padding: 0.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #3a3b3f;
+    cursor: pointer;
+}
+
+
+.hidden-feature{
+    display: none;
+    margin-left: 1rem;
+}
+
+
+.no-message{
+    display: none;
+    position: absolute;
+    right: 5%;
+    font-size: 12px;
+}
+
+
+.feature-items:hover{
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+
+.left-bar:hover .feature-items{
+    width: 225px;
+    padding:0.2rem 0rem 0.2rem 1.3rem;
+    margin-left: -1.5rem;
+    border-radius: 0px 15px 15px 0px;
+    justify-content: flex-start;
+}
+
+
+
+
+.labels{
+    display: flex;
+    font-size: 16px;
+    width: 200px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0.35rem;
+}
+
+
+#inbox{
+    background-color:rgba(194,231,255,0.70);
+}
+
+
+.left-bar:hover .hidden-label,.left-bar:hover .hidden-feature,.left-bar:hover .no-message{
+    display: inline;
+}
+
+
+.hidden-label{
+    display: none;
+}
+
+
+.features .material-icons, .features .material-icons-outlined, .labels .material-icons-outlined{
+    font-size: 20px;
+    color: #5f6368;
+    cursor: pointer;
+}
