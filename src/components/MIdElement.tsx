@@ -179,51 +179,34 @@ const MidElement = () => {
     <div className="emaillist">
       {/* <!-- Settings Starts --> */}
       <div className="emailList_settings">
+
         <div className="emailList_settingsLeft">
-          <input type="checkbox" />
-          
-          
-          {/* <span className="material-icons"> redo</span>
+            <input type="checkbox" />
+            {/* <span className="material-icons"> redo</span>
           <span className="material-icons"> more_vert</span> */}
+            <div className="emailListsettingsLeft_icon">
+              <span className="material-icons"> <MdOutlineRefresh/></span>
+            </div>
+            <div className="emailListsettingsLeft_icon">
+              <span className="material-icons2"> <BiDotsVerticalRounded/></span>
+            </div>
         </div>
-        <div className="emailListsettingsLeft_icon">
-          <span className="material-icons"> <MdOutlineRefresh/></span>
-        </div>
-
-        <div className="emailListsettingsLeft_icon">
-          <span className="material-icons2"> <BiDotsVerticalRounded/></span>
-        </div>
-
-        <div className="mailListsettingsLeft_icon">
-            <span className="text_in_top_1">
-              <p>1-50 of 12,774</p>
-            </span>
-        </div>
-        
-
-        <div className="emailListsettingsLeft_icon">
-          <span className="material-icons3"> <AiOutlineLeft/></span>
-        </div>
-
-        
-
-        <div className="emailListsettingsLeft_icon">
-          <span className="material-icons4"> <AiOutlineRight/></span>
-        </div>
-
-        
 
         <div className="emailList_settingsRight">
-          {/*<span className="material-icons"> chevron_left</span>*/}
-            
-              
-          
-          {/* <span className="material-icons"> chevron_left</span> */}
-          {/* <span className="material-icons"> keyboard_hide</span>
-          <span className="material-icons"> settings</span> */}
+          <div className="mailListsettingsRight_icon">
+              <span className="text_in_top_1">
+                <p>1-50 of 12,774</p>
+              </span>
+          </div>
+          <div className="emailListsettingsRight_icon">
+            <span className="material-icons3"> <AiOutlineLeft/></span>
+          </div>
+          <div className="emailListsettingsRight_icon">
+            <span className="material-icons4"> <AiOutlineRight/></span>
+          </div>
         </div>
-
       </div>
+
  
       {/* <div className="emaillist_sections">
         <div className="section section__selected">
@@ -248,8 +231,18 @@ const MidElement = () => {
     {/* // Email List Row Starts */}
     <div className="emailList_list">
       
+
+        {/* <div className="emailList_settingsRight">
+          <span className="material-icons"> chevron_left</span>
+            
+              
+          
+          <span className="material-icons"> chevron_left</span>
+          <span className="material-icons"> keyboard_hide</span>
+          <span className="material-icons"> settings</span>
+        </div> */}
+
       {/* Email Row Starts */}
-   
     
       {
         data.map((item)=>{
