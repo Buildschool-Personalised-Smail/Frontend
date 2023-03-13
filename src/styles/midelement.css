@@ -13,7 +13,7 @@ body {
     border: 0.5px solid black;
     border-radius: 10px;
     width: 100vw;
-    height: 90vh;
+    height: vh;
     background-color: #ffffff;
     color: #000000;
 }
@@ -34,15 +34,68 @@ body {
     padding: 8px;
 }
 
-.emailList__settingsLeft{
+.emailList_settingsLeft {
     display:flex;
-    align-items: center;
+    align-items: left;
+    margin-left:8.5px;
+    
 }
 
-.emailList__settings .material-icons{
-    margin: 5px;
-    cursor:pointer;
+.emailListsettingsLeft_icon .material-icons {
+    display:flex;
+    align-items: left;
+    margin-left:25px;
+    margin-top: 3px;
+    transform: scale(1.3);
+    
 }
+
+.emailListsettingsLeft_icon .material-icons2 {
+    display:flex;
+    align-items: left;
+    margin-left:25px;
+    margin-top: 3px;
+    transform: scale(1.3);
+    
+}
+
+.emailListsettingsLeft_icon .material-icons3 {
+    display:flex;
+    align-items: left;
+    margin-left:-422px;
+    margin-top: 3px;
+    transform: scale(1);
+    
+}
+
+
+.emailListsettingsLeft_icon .material-icons4 {
+    display:flex;
+    align-items: left;
+    margin-left:-400px;
+    margin-top: 3px;
+    transform: scale(1);
+    
+}
+
+
+
+
+.emailList_settingsRight .material-icons {
+    margin: 60px;
+    transform: scale(1.3);
+  
+}
+
+.mailListsettingsLeft_icon .text_in_top_1{
+    font-size: 13px;
+    margin-left: 1200px;
+    text-align:center;
+    padding-top: 10px;
+   
+}
+
+
 
 .section{
     display: flex;
