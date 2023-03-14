@@ -7,10 +7,12 @@ import './App.css'
 function App() {
   return (
     (
-      <div className="App">
-        <MidElement/>
-        <Sidebar/>
+      <div className="container1">
         <Navbar/>
+        <div className='container2'>
+          <Sidebar/>
+          <MidElement/>
+        </div>
       </div>
     )
   )
