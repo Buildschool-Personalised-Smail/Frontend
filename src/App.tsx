@@ -5,12 +5,14 @@ import MidElement from "../src/components/MIdElement";
 import './App.css'
 
 function App() {
+  const [open, setOpen] = useState(true);
+
   return (
     (
       <div className="container1">
-        <Navbar/>
+        <Navbar setOpen={setOpen}/>
         <div className='container2'>
-          <Sidebar/>
+          <Sidebar open={open}/>
           <MidElement/>
         </div>
       </div>

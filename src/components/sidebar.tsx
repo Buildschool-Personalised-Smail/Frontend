@@ -1,4 +1,4 @@
-import React from 'react';
+import  React , { useState } from 'react';
 import '../styles/sidebar.css';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
@@ -8,15 +8,59 @@ import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
+import LabelIcon from '@mui/icons-material/Label';
+import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 
-const SideBar = () => {
+const SideBar = ({open}:{open: boolean}) => {
+
+  const labels = [
+    {
+      id:1,
+      name: "Academics",
+      count: "14",
+      color: "lightpink",
+    },
+    {
+      id:2,
+      name: "Culturals",
+      count: "",
+      color: "green",
+    },
+    {
+      id:3,
+      name: "Tech",
+      count: "20",
+      color: "blue",
+    },
+    {
+      id:4,
+      name: "Placement",
+      count: "7",
+      color: "red",
+    },
+    {
+      id:5,
+      name: "Internships",
+      count: "3",
+      color: "red",    
+    },
+    {
+      id:6,
+      name: "Announcements",
+      count: "3",
+      color: "purple",
+    },
+  ]
+
+  const [hover, setHover] = useState(false);
+
 
     return(
 <body>
 
         <main className="main">
       
-            <div className="left-bar">
+            <div className={`left-bar ${open}`}>
               <button style={{border: "none"}}>
                 <div id="compose" className="compose-item">
                   <EditOutlinedIcon className="icons" />
@@ -58,12 +102,32 @@ const SideBar = () => {
                 </div>
       
               </div>
-      
-              <div className="labels">
+              
+              <div className="labels-heading">
                 <span className="hidden-label">Label</span>
                 <button style={{border: "none"}}>
                   <AddOutlinedIcon className="icons" />
                 </button>
+              </div>
+              <div className='labelcontainer' >
+                {labels.map((label)=> {
+                  return(
+                    <div className='label-items' key={label.id} onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)}>
+                      <div className='label-icon'>
+                      <LabelIcon className="labelicon" style={{color:`${label.color}`}}/>
+                      </div>
+                      <div className='label-name' style={{ display: open?"flex":"none"}}>
+                        {label.name}
+                      </div>
+                      <div className='count-unread'style={{ display: open||hover?"flex":"none"}}>
+                        {label.count}
+                      </div>
+                      {/* {hover? (
+                      <div className='label-threedot'style={{ display: open?"flex":"none"}}>
+                          <MoreVertOutlinedIcon className='label-threedot-icon'/>
+                      </div>):""} */}
+                    </div>
+                    )})}
               </div>
             </div>
         </main>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState}from 'react';
 import '../styles/navbar.css';
 import gmailicon from "../assets/icons8-gmail.svg";
 import filter from "../assets/filter-6551.svg";
@@ -14,9 +14,10 @@ import youtube from "../assets/YouTube_full-color_icon_(2017).svg";
 import photos from "../assets/Google_Photos_icon_(2020).svg";
 import classroom from "../assets/Google_Classroom_Logo.svg";
 import search from "../assets/icons8-search.svg";
-import iit from "../assets/IIT-Madras-01.svg"
+import iit from "../assets/IIT-Madras-01.svg";
+import SideBar from './sidebar';
 
-const Navbar = () => {
+const Navbar = ({setOpen}:{setOpen: any}) => {
 
     //active
     window.onclick = function(event){
@@ -81,16 +82,17 @@ const Navbar = () => {
         //event.preventDefault();
         document.getElementById("support")?.classList.toggle("show");
     }
+
     return(
     <body>
         <nav className= "navbar">
             <div className = "nav-header">
-                <button  className="burger material-symbols-outlined">menu</button>
+                <button  className="burger material-symbols-outlined" onClick={()=>setOpen((prev: boolean) => !prev)}>menu</button>
 
-                <a href="index.html" className = "nav-logo">
+                <a href="./" className = "nav-logo">
                     <img src={gmailicon} alt="gmail"/>
                 </a>
-                <a href="index.html"className = "nav-logo-text">
+                <a href="./"className = "nav-logo-text">
                   Gmail
                 </a>
             </div>

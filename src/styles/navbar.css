@@ -3,6 +3,7 @@ body{
     overflow: hidden;
   }
   .navbar{
+    padding: 8px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -11,9 +12,10 @@ body{
   }
   
   .nav-header{
+      width: 200px;
       vertical-align: middle;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       /* position: absolute; */
   }
@@ -46,9 +48,9 @@ body{
       
       margin-left: 115px;
       position: relative;
-      background-color: #eff1f2;
+      background-color: #ebf1fa;
       border-radius: 8px;
-      width: 330px;
+      width: 450px;
       vertical-align: middle;
       display: flex;
       justify-content: space-between;
@@ -66,7 +68,7 @@ body{
   }
   
   .nav-search input {
-      width: 328px;
+      width: 448px;
       height: auto; 
       font-size: 16px;
       border: 0;
@@ -106,9 +108,9 @@ body{
       font-size: 25px;
       font-family: sans-serif;
       align-self: flex-end;
-      padding-bottom: 10px;
+      padding-bottom: 5px;
       text-decoration: none;
-      color: white;
+      color: #353535;
   }
   
   .nav-icons{
@@ -158,7 +160,8 @@ body{
       justify-content: space-between;
       align-items: center;
       height: 44px;
-      background: transparent;
+      padding: 5px;
+      background: white;
       margin-right: 10px;
   }
   
@@ -270,14 +273,15 @@ body{
     
     .active-dropdown {
       display: none;
-      overflow-y: scroll;
+      /* overflow-y: scroll; */
       overflow-x: hidden;
       position: absolute;
       margin-top: 5px;
-      background-color: #f1f1f1;
+      background-color: #ffffff;
       width: 250px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
+      border-radius: 5px;
+      z-index: 600;
       align-content: center;
       justify-self: center;
       align-items: center;
@@ -410,7 +414,7 @@ body{
   
     .calendar{
       height: 30px !important;
-      max-width: ;
+      /* max-width: ; */
     }
     .app-text{
       color: white;
@@ -421,6 +425,7 @@ body{
   
    .apps{
     align-content: center;
+    width: 44px;
    }
   
     .dot-app {
