@@ -10,11 +10,11 @@ function App() {
 
   const [item, setItem] = useState(data);
 
-  const labelItems = [...new Set(data.map((Val) => Val.category))];
+  const labelItems = [...new Set(data.map((e) => e.category))];
 
   const filterItem = (curr: any) => {
-    const newItem = data.filter((newVal) => {
-      return newVal.category === curr;
+    const newItem = data.filter((newItem) => {
+      return newItem.category === curr;
     });
     setItem(newItem);
   };

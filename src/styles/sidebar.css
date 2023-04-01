@@ -6,9 +6,7 @@
 
 
 /* Left Bar */
-.body{
-    height: 100vh;
-}
+
 .icons {
     color: #5f6368;
 }
@@ -157,20 +155,25 @@ button{
     flex-direction: column;
     font-size: 16px;
     width: 198px;
-    padding: 4px 12px 0 12px;
 }
 .label-items{
     display: flex;
+    border-radius: 50px;
     justify-content: space-between;
     align-items: center;
-    padding: 6px 0 0 0;
-    height: 32px;
+    width: 198px;
+    margin: 4px 0px 0px 0px;
+    padding: 4px 12px 4px 12px;
+    height: 25px;
 }
-/* .labelcontainer :hover{
+.labelcontainer :hover{
     background-color: rgba(0, 0, 0, 0.10);
-} */
+}
 .label-items :active{
     background-color: #e1e3e1;
+}
+.label-items :hover{
+    background-color: transparent;
 }
 .label-icon{
  padding: 0px 0px 0px 0px !important;
