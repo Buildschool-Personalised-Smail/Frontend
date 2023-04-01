@@ -3,7 +3,8 @@ import "../styles/midelement.css";
 import { MdOutlineRefresh } from 'react-icons/md';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { AiOutlineLeft } from 'react-icons/ai';
-import { AiOutlineRight } from 'react-icons/ai';
+import { AiOutlineRight, AiOutlineStar } from 'react-icons/ai';
+import LabelIcon from '@mui/icons-material/Label';
 const MidElement = () => {
   const [gmailsMails, setGmailMails] = useState([]);
   const mails = async () => {
@@ -267,15 +268,13 @@ const MidElement = () => {
                 <div className="emailRow">
                   <div className="emailRow__options">
                     <input type="checkbox" />
-                    {/* <span className="material-icons"> fhbe</span> */}
-                    {/* <span className="material-icons"> rfeb</span> */}
+                    <span className='objects'><AiOutlineStar /></span>
+                    <span className='objects'><LabelIcon /></span>
                   </div>
-                  <h3 className="emailRow_title">fber</h3>
+                  <div className='objects'>Youtube</div>
 
                   <div className="emailRow__message">
-                    <h4>
-                      hfbvhjebvj <span className="emailRow__description"> {item}</span>
-                    </h4>
+                    <span className="emailRow__description"> {item}</span>
                   </div>
 
                   <p className="emailRow__time">10pm</p>
