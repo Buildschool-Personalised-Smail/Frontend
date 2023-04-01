@@ -9,47 +9,48 @@ import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import LabelIcon from '@mui/icons-material/Label';
+import {data} from "./data";
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 
-const SideBar = ({open}:{open: boolean}) => {
+const SideBar = ({filterItem, open, labelItems, setItem}:{filterItem:any,open: boolean,labelItems:any, setItem:any}) => {
 
   const labels = [
     {
       id:1,
-      name: "Academics",
+      name: labelItems[0],
       count: "14",
       color: "lightpink",
     },
     {
       id:2,
-      name: "Culturals",
+      name: labelItems[1],
       count: "",
       color: "green",
     },
     {
       id:3,
-      name: "Tech",
+      name: labelItems[2],
       count: "20",
       color: "blue",
     },
     {
       id:4,
-      name: "Placement",
+      name:  labelItems[3],
       count: "7",
       color: "red",
     },
     {
       id:5,
-      name: "Internships",
+      name:  labelItems[4],
       count: "3",
-      color: "red",    
+      color: "purple",    
     },
-    {
-      id:6,
-      name: "Announcements",
-      count: "3",
-      color: "purple",
-    },
+    // {
+    //   id:6,
+    //   name:  labelItems[1],
+    //   count: "3",
+    //   color: "purple",
+    // },
   ]
 
   const [hover, setHover] = useState(false);
@@ -69,7 +70,7 @@ const SideBar = ({open}:{open: boolean}) => {
               </button>
               <div className="features">
       
-                <div className="feature-items" id="inbox">
+                <div className="feature-items" id="inbox"  onClick={()=>setItem(data)}>
                   <MailOutlinedIcon className="icons" />
                   <span className="hidden-feature"><strong>Inbox</strong></span>
                   <span className="no-message">6969</span>
@@ -112,7 +113,7 @@ const SideBar = ({open}:{open: boolean}) => {
               <div className='labelcontainer' >
                 {labels.map((label)=> {
                   return(
-                    <div className='label-items' key={label.id} onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)}>
+                    <div className='label-items' key={label.id} onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)} onClick={()=>filterItem(label.name)}>
                       <div className='label-icon'>
                       <LabelIcon className="labelicon" style={{color:`${label.color}`}}/>
                       </div>

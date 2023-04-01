@@ -3,7 +3,7 @@ body{
     overflow: hidden;
   }
   .navbar{
-    padding: 8px;
+    padding: 8px 8px 12px 8px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -368,7 +368,7 @@ body{
       /* height: 450px; */
       /* width: 1000px; */
       padding: 40px;
-      overflow-y: scroll;
+      /* overflow-y: scroll; */
       width: 320px;
       border-radius: 7px;
       display: none;  
@@ -378,7 +378,7 @@ body{
       width: 250px;
       /* overflow: auto; */
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
+      z-index: 700;
       /* align-items: center; */
       align-content: center;
       justify-self: center;
@@ -451,25 +451,13 @@ body{
     }
 
     .support-dropdown {
-      /* height: 450px; */
-      /* width: 1000px; */
-      
-      
-      /* width: 320px; */
-      top: 210px;
+      top: 58px;
       right: 248px;
       display: none;  
       position: absolute;
       border-radius: 7px;
-
-      /* margin-top: 5px; */
-      
-      /* background-color: #f1f1f1; */
-      /* width: 250px; */
-      /* overflow: auto; */
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-      /* align-items: center; */
+      z-index: 700;
       align-content: center;
       justify-self: center;
       align-items: center;

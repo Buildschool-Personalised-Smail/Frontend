@@ -6,7 +6,9 @@
 
 
 /* Left Bar */
-
+.body{
+    height: 100vh;
+}
 .icons {
     color: #5f6368;
 }

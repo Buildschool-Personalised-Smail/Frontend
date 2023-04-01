@@ -15,7 +15,6 @@ import photos from "../assets/Google_Photos_icon_(2020).svg";
 import classroom from "../assets/Google_Classroom_Logo.svg";
 import search from "../assets/icons8-search.svg";
 import iit from "../assets/IIT-Madras-01.svg";
-import SideBar from './sidebar';
 
 const Navbar = ({setOpen}:{setOpen: any}) => {
 

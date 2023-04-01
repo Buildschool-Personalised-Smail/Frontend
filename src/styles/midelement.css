@@ -14,12 +14,15 @@ body {
     /* border: 0.5px solid black; */
     border-radius: 12px;
     width: 100% !important;
-    height: vh;
+    height: 90vh;
     background-color: #ffffff;
     color: #000000;
     flex: 1;
 }
 
+.emailList_list{
+    height: 100% !important;
+}
 .emailList_settings{
     position: sticky;
     top:0;

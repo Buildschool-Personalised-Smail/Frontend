@@ -1,179 +1,23 @@
-import React from 'react'
+import React, {ReactNode, useState} from 'react'
 import "../styles/midelement.css";
 import { MdOutlineRefresh} from 'react-icons/md';
 import { BiDotsVerticalRounded} from 'react-icons/bi';
 import { AiOutlineLeft} from 'react-icons/ai';
 import { AiOutlineRight} from 'react-icons/ai';
-const MidElement = () => {
-  const data= [
-    {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-},
-{
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},
-{
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},  {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},  {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},  {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},  {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},  {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},  {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},  {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},  {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},  {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},  {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},  {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},
-{
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-}, {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-}, {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-}, {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-}, {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-}, {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-}, {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-}, {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-}, {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-}, {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-}, {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-}, {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-}, {
-  "icon": "star_border",
-  "icons2": "star_border",
-  "title": "youtube",
-  "message": "on Your Channel Future Coders",
-  "decription": "on Your Channel Future Coders"
-},
-];
+
+const MidElement = ({item}:{item:any}) => {
    
+// const [item, setItem] = useState(data);
+// const labelItems = [...new Set(data.map((Val) => Val.category))];
+
+// const filterItem = ({curlabel}:{curlabel: any}) => {
+//   const newItem = data.filter((newVal) => {
+//     return newVal.category === curlabel;
+//   });
+//   setItem(newItem);
+// };
+
+
   return (
     <>
     <div className="emaillist">
@@ -245,19 +89,21 @@ const MidElement = () => {
       {/* Email Row Starts */}
     
       {
-        data.map((item)=>{
+        item.map((e: {
+          decription: ReactNode; icon: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; icons2: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; title: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; message: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; "": { decription: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; }; 
+})=>{
           return(
             <div className="emailRow">
             <div className="emailRow__options">
               <input type = "checkbox" />
-              <span className= "material-icons"> {item.icon}</span>
-              <span className = "material-icons"> {item.icons2}</span>
+              <span className= "material-icons"> {e.icon}</span>
+              <span className = "material-icons"> {e.icons2}</span>
             </div>
-            <h3 className ="emailRow_title">{item.title}</h3>
+            <h3 className ="emailRow_title">{e.title}</h3>
       
             <div className="emailRow__message">
               <h4>
-                {item.message} <span className="emailRow__description"> {item.decription}</span>
+                {e.message} <span className="emailRow__description"> {e.decription}</span>
                 </h4>
             </div>
       

@@ -1,9 +1,13 @@
+
 .container1{
+  height: 100vh;
   background-color: #f6f9fa;
   display: flex;
   flex-direction: column;
 }
 .container2{
+  height: 100vh;
+  background-color: #f6f9fa;
   padding: 0 18px 0 12px;
   display: flex;
   flex-direction: row;
