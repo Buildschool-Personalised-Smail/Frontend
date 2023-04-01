@@ -5,16 +5,15 @@ import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { AiOutlineLeft } from 'react-icons/ai';
 import { AiOutlineRight } from 'react-icons/ai';
 const MidElement = () => {
-  const [gmailsMails, setGmailMails] = useState({});
+  const [gmailsMails, setGmailMails] = useState([]);
   const mails = async () => {
     const result = await fetch('http://localhost:8000/mailsget').then(async (res: any) => {
-      // res.json();
-      console.log(res);
-      await res.json()
-      return res;
+      // console.log(res.json());
+      let resp = await res.json();
+      return resp;
     }).then((res: any) => {
-      setGmailMails(res);
-      console.log(gmailsMails);
+      setGmailMails(Object.values(res));
+      console.log(res)
       return res;
     })
   }
@@ -263,19 +262,19 @@ const MidElement = () => {
           {/* Email Row Starts */}
 
           {
-            data.map((item) => {
+            gmailsMails.map((item) => {
               return (
                 <div className="emailRow">
                   <div className="emailRow__options">
                     <input type="checkbox" />
-                    <span className="material-icons"> {item.icon}</span>
-                    <span className="material-icons"> {item.icons2}</span>
+                    {/* <span className="material-icons"> fhbe</span> */}
+                    {/* <span className="material-icons"> rfeb</span> */}
                   </div>
-                  <h3 className="emailRow_title">{item.title}</h3>
+                  <h3 className="emailRow_title">fber</h3>
 
                   <div className="emailRow__message">
                     <h4>
-                      {item.message} <span className="emailRow__description"> {item.decription}</span>
+                      hfbvhjebvj <span className="emailRow__description"> {item}</span>
                     </h4>
                   </div>
 
