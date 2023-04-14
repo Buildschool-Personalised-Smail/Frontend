@@ -173,6 +173,12 @@ const MidElement = () => {
   "decription": "on Your Channel Future Coders"
 },
 ];
+
+const handleEmailClick = (e) => {
+    e.preventDefault();
+    // open white page here
+  };
+
    
   return (
     <>
@@ -245,20 +251,23 @@ const MidElement = () => {
       {/* Email Row Starts */}
     
       {
-        data.map((item)=>{
+        data.map((item,index)=>{
+          <a key={index} href="#" onClick={handleEmailClick}></a>
           return(
+            
             <div className="emailRow">
             <div className="emailRow__options">
               <input type = "checkbox" />
               <span className= "material-icons"> {item.icon}</span>
-              <span className = "material-icons"> {item.icons2}</span>
+              <span className= "material-icons2"> {item.icons2}</span>
+              
             </div>
             <h3 className ="emailRow_title">{item.title}</h3>
       
             <div className="emailRow__message">
               <h4>
                 {item.message} <span className="emailRow__description"> {item.decription}</span>
-                </h4>
+              </h4>
             </div>
       
             <p className ="emailRow__time">10pm</p>
@@ -267,13 +276,6 @@ const MidElement = () => {
           )
         })
       }
-           
-          
-        
-      
-    
-
-    
 
       {/* Email Row Ends */}
 
@@ -284,6 +286,11 @@ const MidElement = () => {
       
   )
 }
+
+
+
+
+
 
 
 export default MidElement

@@ -154,12 +154,43 @@ body {
 .emailRow__options{
     display: flex;
     align-items: center;
+    font-size: 14px;
+    
 }
 
-.emailRow__options .material-icons,
+
+
+
+.emailRow__options ,
 input{
     margin: 5px;
 }
+
+.material-icons {
+    padding-left: 30px;
+    padding-right: 0px;
+    font-size: 14px;
+    flex:0 0 25%;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #202124;
+    font-family: Roboto, Arial, sans-serif;
+  }
+
+
+  .material-icons2 {
+    padding-left: 15px;
+    padding-right: 0px;
+    font-size: 14px;
+    flex:0 0 25%;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #202124;
+    font-family: Roboto, Arial, sans-serif;
+  }
+  
 
 .emailList_list {
     overflow: scroll;
@@ -171,10 +202,13 @@ input{
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    height :50px;
+    height :40px;
     border-bottom : 1px solid rgb(234, 232, 232);
     cursor:pointer;
     z-index:999;
+    padding: 0px 10px;
+    font-family: Roboto, Arial, sans-serif;
+    
 }
 
 
@@ -183,35 +217,81 @@ input{
     box-shadow: 0 4px 4px -2px rgba(0,0,0,0.24);
 }
 
-.emailRow_message{
+/*.emailRow__message{
     display:flex;
     flex:0.8; 
-    align-items: center;
+    align-items: left;
     font-size: 13px;
-}
+    
+}*/
 
-.emailRow_message h4 {
+/*.emailRow__message.h4 {
     width: 400px;
     white-space: nowrap;
     overflow:hidden;
     text-overflow: ellipsis;
-    padding-left: 5px;
+    padding-left: 2px;
     padding-right: 5px;
 
-}
+}*/
 
-.emailRow__title{
-    font-size: 13px;
-    flex:0.3;
+
+/*.emailRow_description{
+    width: 400px;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px;
+    color: #202124;
+    font-family: Roboto, Arial, sans-serif;
+}*/
+
+
+.emailRow_title{
+    padding-left: 30px;
+    padding-right: 0px;
+    font-size: 14px;
+    flex:0 0 25%;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #202124;
+    font-family: Roboto, Arial, sans-serif;
 }
+    
+
 
 .emailRow__time{
-    padding-right: 15px;
-    font-size: 15px;
-    font-weight: bold;
+    padding-right: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Roboto, Arial, sans-serif;
 }
 
-.emailRow_description{
+/*.emailRow__message{
     font-weight:400;
     color:grey;
+    font-size: 14px;
+    line-height: 20px;
+    color: #202124;
+    font-family: Roboto, Arial, sans-serif;
+    text-align: left;
+    align-items: left;
+    padding-left: 0px;
+    
+}*/
+
+.emailRow__message{
+    display: flex;
+    align-items: left;
+    flex: 10%;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight:lighter;
+    
 }
