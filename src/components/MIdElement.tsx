@@ -5,8 +5,25 @@ import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { AiOutlineLeft } from 'react-icons/ai';
 import { AiOutlineRight, AiOutlineStar } from 'react-icons/ai';
 import LabelIcon from '@mui/icons-material/Label';
+import parseFrom from '../utils/parseFrom';
+
+interface threadData {
+  id: string;
+  from: string;
+  to: string;
+  reply_to: string;
+  date: string;
+  internal_date: string;
+  subject: string;
+  labels: [string];
+  snippet: string;
+  threadId: string;
+  body: string;
+}
+
 const MidElement = () => {
   const [gmailsMails, setGmailMails] = useState([]);
+  const [threadsLists, setThreadLists] = useState<Array<Array<threadData>>>([]);
   const mails = async () => {
     const result = await fetch('http://localhost:8000/mailsget').then(async (res: any) => {
       // console.log(res.json());
@@ -18,179 +35,21 @@ const MidElement = () => {
       return res;
     })
   }
+  const threadsList = async () => {
+    const result = await fetch('http://localhost:8000/threadslist').then(async (res: any) => {
+      console.log(res);
+      let resp = await res.json();
+      return resp;
+    }).then((res: any) => {
+      setThreadLists(res);
+      console.log(res)
+      return res;
+    })
+  }
   useEffect(() => {
-    mails();
+    // mails();
+    threadsList()
   }, [])
-
-
-  const data = [
-    {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    },
-    {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    },
-    {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    },
-    {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    }, {
-      "icon": "star_border",
-      "icons2": "star_border",
-      "title": "youtube",
-      "message": "on Your Channel Future Coders",
-      "decription": "on Your Channel Future Coders"
-    },
-  ];
 
   return (
     <>
@@ -263,21 +122,21 @@ const MidElement = () => {
           {/* Email Row Starts */}
 
           {
-            gmailsMails.map((item) => {
+            threadsLists.map((item, index) => {
               return (
-                <div className="emailRow">
+                <div className="emailRow" key={index}>
                   <div className="emailRow__options">
                     <input type="checkbox" />
-                    <span className='objects'><AiOutlineStar /></span>
-                    <span className='objects'><LabelIcon /></span>
+                    <span className='objects1'><AiOutlineStar /></span>
+                    {/* <span className='objects'><LabelIcon /></span> */}
                   </div>
-                  <div className='objects'>Youtube</div>
+                  <div className='objects'>{parseFrom(item[0].from)}</div>
 
                   <div className="emailRow__message">
-                    <span className="emailRow__description"> {item}</span>
+                    <span className="emailRow__description"><b>{item[0].subject}</b>-{item[0].snippet}</span>
                   </div>
 
-                  <p className="emailRow__time">10pm</p>
+                  <p className="emailRow__time">{item[0].internal_date}</p>
 
                 </div>
               )
