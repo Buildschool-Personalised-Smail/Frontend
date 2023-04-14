@@ -174,10 +174,7 @@ const MidElement = () => {
 },
 ];
 
-const handleEmailClick = (e) => {
-    e.preventDefault();
-    // open white page here
-  };
+
 
    
   return (
@@ -251,10 +248,8 @@ const handleEmailClick = (e) => {
       {/* Email Row Starts */}
     
       {
-        data.map((item,index)=>{
-          <a key={index} href="#" onClick={handleEmailClick}></a>
+        data.map((item)=>{
           return(
-            
             <div className="emailRow">
             <div className="emailRow__options">
               <input type = "checkbox" />
@@ -286,6 +281,7 @@ const handleEmailClick = (e) => {
       
   )
 }
+
 
 
 
