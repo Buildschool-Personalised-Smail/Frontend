@@ -1,5 +1,5 @@
 /* Global Style */
-*{
+* {
     padding: 0%;
     margin: 0%;
 }
@@ -11,65 +11,68 @@
     color: #5f6368;
 }
 
-.left-bar{
+.left-bar {
     width: 231px;
     padding: 4px 0px 0 0;
+    height: 100vh;
+    overflow-y: scroll;
 }
-.left-bar.false{
+
+.left-bar.false {
     width: 67px;
     height: 85.7vh;
     transition: 0.1s;
     /* padding:1rem 0rem 0rem 1.5rem; */
-    background-color: #f6f8fc;    
+    background-color: #f6f8fc;
 }
-.l
 
- .left-bar.true{
+.l .left-bar.true {
     width: 100%;
     transition: -0.1s;
 }
 
 
-.features{
+.features {
     padding: 1rem 0rem;
 }
 
 
-#compose{
-    background-color:rgb(194,231,255 );
+#compose {
+    background-color: rgb(194, 231, 255);
     width: 25px;
     padding: 13.5px 15px;
     border-radius: 12px;
     /* margin-left:-15px; */
 }
-button{
+
+button {
     background-color: transparent;
 }
 
 
-.compose-hidden{
+.compose-hidden {
     display: none;
 }
 
 
-.left-bar.true .compose-item{
+.left-bar.true .compose-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 110px !important;
-    font-size: 15px ;
+    font-size: 15px;
 
 
 }
 
 
-.left-bar.true .compose-hidden{
+.left-bar.true .compose-hidden {
     display: block;
-    color:#465b6c;
+    color: #465b6c;
 }
 
 
-.feature-items{
+.feature-items {
     position: relative;
     margin-bottom: 0.1rem;
     width: 25px;
@@ -85,29 +88,29 @@ button{
 }
 
 
-.hidden-feature{
+.hidden-feature {
     display: none;
     margin-left: 1rem;
 }
 
 
-.no-message{
+.no-message {
     display: none;
     position: absolute;
     right: 5%;
     font-size: 12px;
 }
 
-.feature-items:active{
+.feature-items:active {
     background-color: #d6e3fa;
 }
 
-.feature-items:hover{
+.feature-items:hover {
     background-color: rgba(0, 0, 0, 0.10);
 }
 
 
-.left-bar.true .feature-items{
+.left-bar.true .feature-items {
     width: 200px;
     /* padding:0.2rem 0rem 0.2rem 1.3rem;
     margin-left: -1.5rem; */
@@ -118,7 +121,7 @@ button{
 
 
 
-.labels-heading{
+.labels-heading {
     display: flex;
     font-size: 16px;
     width: 200px;
@@ -134,29 +137,34 @@ button{
 } */
 
 
-.left-bar.true .hidden-label,.left-bar.true .hidden-feature,.left-bar.true .no-message{
+.left-bar.true .hidden-label,
+.left-bar.true .hidden-feature,
+.left-bar.true .no-message {
     display: inline;
 }
 
 
-.hidden-label{
+.hidden-label {
     display: none;
 }
 
 
-.features .material-icons, .features .material-icons-outlined, .labels-heading .labelcontainer .material-icons-outlined{
+.features .material-icons,
+.features .material-icons-outlined,
+.labels-heading .labelcontainer .material-icons-outlined {
     font-size: 20px;
     color: #5f6368;
     cursor: pointer !important;
 }
 
-.labelcontainer{
+.labelcontainer {
     display: flex;
     flex-direction: column;
     font-size: 16px;
     width: 198px;
 }
-.label-items{
+
+.label-items {
     display: flex;
     border-radius: 50px;
     justify-content: space-between;
@@ -169,7 +177,7 @@ button{
 .labelcontainer :hover{
     background-color: rgba(0, 0, 0, 0.10);
 }
-.label-items :active{
+.label-items :active {
     background-color: #e1e3e1;
 }
 .label-items :hover{
@@ -178,12 +186,15 @@ button{
 .label-icon{
  padding: 0px 0px 0px 0px !important;
 }
-.label-name{
+
+.label-name {
     padding: 0 4px 0 10px;
     text-align: left;
     width: 100%;
-    cursor: pointer
+    cursor: pointer;
+    font-size: 11px;
 }
-.count-unread .label-threedot{
+
+.count-unread .label-threedot {
     cursor: pointer
 }

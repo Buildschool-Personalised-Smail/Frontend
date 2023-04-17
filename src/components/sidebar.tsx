@@ -1,4 +1,4 @@
-import  React , { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/sidebar.css';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
@@ -12,7 +12,28 @@ import LabelIcon from '@mui/icons-material/Label';
 import {data} from "./data";
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 
+interface labelData {
+  id: string;
+  name: string;
+}
+
 const SideBar = ({filterItem, open, labelItems, setItem}:{filterItem:any,open: boolean,labelItems:any, setItem:any}) => {
+  const [labels, setLabels] = useState([])
+  const labelFetch = async () => {
+    const result = await fetch('http://localhost:8000/labelsget').then(async (res: any) => {
+      // console.log(res.json());
+      let resp = await res.json();
+      return resp;
+    }).then((res: any) => {
+      setLabels(res);
+      console.log(res)
+      return res;
+    })
+  }
+  useEffect(() => {
+    // mails();
+    labelFetch();
+  }, [])
 
   const labels = [
     {
@@ -56,8 +77,8 @@ const SideBar = ({filterItem, open, labelItems, setItem}:{filterItem:any,open: b
   const [hover, setHover] = useState(false);
 
 
-    return(
-<body>
+  return (
+    <body>
 
         <main className="main">
       
@@ -111,7 +132,7 @@ const SideBar = ({filterItem, open, labelItems, setItem}:{filterItem:any,open: b
                 </button>
               </div>
               <div className='labelcontainer' >
-                {labels.map((label)=> {
+                {labels.map((label: labelData)=> {
                   return(
                     <div className='label-items' key={label.id} onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)} onClick={()=>filterItem(label.name)}>
                       <div className='label-icon'>
@@ -127,13 +148,14 @@ const SideBar = ({filterItem, open, labelItems, setItem}:{filterItem:any,open: b
                       <div className='label-threedot'style={{ display: open?"flex":"none"}}>
                           <MoreVertOutlinedIcon className='label-threedot-icon'/>
                       </div>):""} */}
-                    </div>
-                    )})}
-              </div>
-            </div>
-        </main>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </main>
     </body>
-    )
+  )
 }
 
 export default SideBar;
