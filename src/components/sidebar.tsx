@@ -35,7 +35,7 @@ const SideBar = ({filterItem, open, labelItems, setItem}:{filterItem:any,open: b
     labelFetch();
   }, [])
 
-  const labels = [
+  const labelss = [
     {
       id:1,
       name: labelItems[0],
@@ -132,7 +132,7 @@ const SideBar = ({filterItem, open, labelItems, setItem}:{filterItem:any,open: b
                 </button>
               </div>
               <div className='labelcontainer' >
-                {labels.map((label: labelData)=> {
+                {labelss.map((label)=> {
                   return(
                     <div className='label-items' key={label.id} onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)} onClick={()=>filterItem(label.name)}>
                       <div className='label-icon'>
