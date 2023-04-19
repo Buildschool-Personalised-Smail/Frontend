@@ -7,49 +7,51 @@ import { AiOutlineRight, AiOutlineStar } from 'react-icons/ai';
 import LabelIcon from '@mui/icons-material/Label';
 import parseFrom from '../utils/parseFrom';
 
-interface threadData {
-  id: string;
-  from: string;
-  to: string;
-  reply_to: string;
-  date: string;
-  internal_date: string;
-  subject: string;
-  labels: [string];
-  snippet: string;
-  threadId: string;
-  body: string;
-}
+// interface threadData {
+//   id: string;
+//   from: string;
+//   to: string;
+//   reply_to: string;
+//   date: string;
+//   internal_date: string;
+//   subject: string;
+//   labels: [string];
+//   snippet: string;
+//   threadId: string;
+//   body: string;
+// }
 
-const MidElement = () => {
-  const [gmailsMails, setGmailMails] = useState([]);
-  const [threadsLists, setThreadLists] = useState<Array<Array<threadData>>>([]);
-  const mails = async () => {
-    const result = await fetch('http://localhost:8000/mailsget').then(async (res: any) => {
-      // console.log(res.json());
-      let resp = await res.json();
-      return resp;
-    }).then((res: any) => {
-      setGmailMails(Object.values(res));
-      console.log(res)
-      return res;
-    })
-  }
-  const threadsList = async () => {
-    const result = await fetch('http://localhost:8000/threadslist').then(async (res: any) => {
-      console.log(res);
-      let resp = await res.json();
-      return resp;
-    }).then((res: any) => {
-      setThreadLists(res);
-      console.log(res)
-      return res;
-    })
-  }
-  useEffect(() => {
-    // mails();
-    threadsList()
-  }, [])
+const MidElement = ({threadsLists}:{threadsLists:any}) => {
+//   const [gmailsMails, setGmailMails] = useState([]);
+//   const [threadsLists, setThreadLists] = useState<Array<Array<threadData>>>([]);
+//   const mails = async () => {
+//     const result = await fetch('http://localhost:8000/mailsget').then(async (res: any) => {
+//       // console.log(res.json());
+//       let resp = await res.json();
+//       return resp;
+//     }).then((res: any) => {
+//       setGmailMails(Object.values(res));
+//       console.log(res)
+//       return res;
+//     })
+//   }
+//   const threadsList = async () => {
+//     const result = await fetch('http://localhost:8000/threadslist').then(async (res: any) => {
+//       console.log(res);
+//       let resp = await res.json();
+//       return resp;
+//     }).then((res: any) => {
+//       setThreadLists(res);
+//       console.log(res)
+//       return res;
+//     })
+//   }
+//   useEffect(() => {
+//     // mails();
+//     threadsList()
+//   }, [])
+
+  
 
   return (
     <>
@@ -122,7 +124,7 @@ const MidElement = () => {
           {/* Email Row Starts */}
 
           {
-            threadsLists.map((item, index) => {
+            threadsLists.map((item:any, index:any) => {
               return (
                 <div className="emailRow" key={index}>
                   <div className="emailRow__options">

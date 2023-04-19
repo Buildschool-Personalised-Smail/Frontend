@@ -17,52 +17,57 @@ interface labelData {
   name: string;
 }
 
-const SideBar = ({filterItem, open, labelItems, setItem}:{filterItem:any,open: boolean,labelItems:any, setItem:any}) => {
-  const [labels, setLabels] = useState([])
-  const labelFetch = async () => {
-    const result = await fetch('http://localhost:8000/labelsget').then(async (res: any) => {
-      // console.log(res.json());
-      let resp = await res.json();
-      return resp;
-    }).then((res: any) => {
-      setLabels(res);
-      console.log(res)
-      return res;
-    })
-  }
-  useEffect(() => {
-    // mails();
-    labelFetch();
-  }, [])
+const SideBar = ({filterItem, open, item, setItem}:{filterItem:any,open: boolean,item:any, setItem:any}) => {
+  // const [labels, setLabels] = useState([])
+  // const labelFetch = async () => {
+  //   const result = await fetch('http://localhost:8000/labelsget').then(async (res: any) => {
+  //     // console.log(res.json());
+  //     let resp = await res.json();
+  //     return resp;
+  //   }).then((res: any) => {
+  //     setLabels(res);
+  //     console.log(res)
+  //     return res;
+  //   })
+  // }
+  // useEffect(() => {
+  //   // mails();
+  //   labelFetch();
+  // }, [])
 
   const labelss = [
     {
       id:1,
-      name: labelItems[0],
+      name: "Codeforces",
+      from: "noreply@codeforces.com",
       count: "14",
       color: "lightpink",
     },
     {
       id:2,
-      name: labelItems[1],
+      name: "Coursera",
+      from: "Coursera <Coursera@email.coursera.org>",
       count: "",
       color: "green",
     },
     {
       id:3,
-      name: labelItems[2],
+      name: "Codeforces",
+      from: "noreply@codeforces.com",
       count: "20",
       color: "blue",
     },
     {
       id:4,
-      name:  labelItems[3],
+      name: "Codeforces",
+      from: "noreply@codeforces.com",
       count: "7",
       color: "red",
     },
     {
       id:5,
-      name:  labelItems[4],
+      name: "Codeforces",
+      from: "noreply@codeforces.com",
       count: "3",
       color: "purple",    
     },
@@ -91,7 +96,7 @@ const SideBar = ({filterItem, open, labelItems, setItem}:{filterItem:any,open: b
               </button>
               <div className="features">
       
-                <div className="feature-items" id="inbox"  onClick={()=>setItem(data)}>
+                <div className="feature-items" id="inbox"  onClick={()=>setItem(item)}>
                   <MailOutlinedIcon className="icons" />
                   <span className="hidden-feature"><strong>Inbox</strong></span>
                   <span className="no-message">6969</span>
@@ -134,7 +139,7 @@ const SideBar = ({filterItem, open, labelItems, setItem}:{filterItem:any,open: b
               <div className='labelcontainer' >
                 {labelss.map((label)=> {
                   return(
-                    <div className='label-items' key={label.id} onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)} onClick={()=>filterItem(label.name)}>
+                    <div className='label-items' key={label.id} onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)} onClick={()=>filterItem(label.from)}>
                       <div className='label-icon'>
                       <LabelIcon className="labelicon" style={{color:`${label.color}`}}/>
                       </div>

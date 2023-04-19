@@ -15,7 +15,7 @@
     width: 231px;
     padding: 4px 0px 0 0;
     height: 100vh;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .left-bar.false {
