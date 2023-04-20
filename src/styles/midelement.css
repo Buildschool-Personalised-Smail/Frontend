@@ -216,13 +216,18 @@ input {
     padding-right: 15px;
     font-size: 15px;
     font-weight: bold;
+    width: 72px;
+    height: 20px;
 }
 
 .emailRow_description {
     font-weight: 400;
     color: grey;
 }
-
+.emailRow__message{
+    text-align: left;
+    width: 730px;
+}
 .emailRow__description {
     overflow: hidden;
     display: -webkit-box;
@@ -231,13 +236,15 @@ input {
     line-clamp: 1;
     -webkit-box-orient: vertical;
     margin-inline: 10px;
+    /* width:, */
 }
 
 .objects {
+    text-align: left;
     margin-inline: 10px;
-    width: 53%;
+    width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 202px;
+    /* max-width: 202px; */
 }

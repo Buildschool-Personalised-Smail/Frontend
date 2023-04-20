@@ -70,8 +70,10 @@ const [item, setItem] = useState(threadsLists);
 // const fromAddress = [...new Set(threadsLists.map((e:any) => e.from))];
 const filterThread = (curr: any) => {
   const newThread = threadsLists.filter((newThread:any) => {
-    return newThread.from === curr;
+     return parseFrom(newThread[0].from).includes(curr);
   });
+  console.log(newThread);
+  setItem(newThread);
 };
 
   return (
