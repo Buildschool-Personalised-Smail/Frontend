@@ -83,6 +83,8 @@ const Navbar = ({setOpen}:{setOpen: any}) => {
         document.getElementById("support")?.classList.toggle("show");
     }
 
+    
+
     return(
     <body>
         <nav className= "navbar">

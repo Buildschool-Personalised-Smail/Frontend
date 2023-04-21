@@ -10,6 +10,9 @@ import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import LabelIcon from '@mui/icons-material/Label';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
+import Compose from "./compose";
+import '/home/ashmitha/Frontend/src/App.css'
+
 
 interface labelData {
   id: string;
@@ -17,6 +20,20 @@ interface labelData {
 }
 
 const SideBar = ({ open }: { open: boolean }) => {
+
+
+
+function composebox(){
+  // e.preventDefault();
+  var x = document.getElementById("compose_box");
+  x.style.display = "block";
+
+  // return(
+  //   <div className="container1">
+  //   </div>
+  //   )
+}
+
   const [labels, setLabels] = useState([])
   const labelFetch = async () => {
     const result = await fetch('http://localhost:8000/labelsget').then(async (res: any) => {
@@ -65,14 +82,15 @@ const SideBar = ({ open }: { open: boolean }) => {
 
 
   return (
+
     <body>
 
       <main className="main">
 
         <div className={`left-bar ${open}`}>
-          <button style={{ border: "none" }}>
+          <button className="compose_button" style={{ border: "none" }} onClick={composebox}>
             <div id="compose" className="compose-item">
-              <EditOutlinedIcon className="icons" />
+              <EditOutlinedIcon className="icons"/>
               <span className="compose-hidden">Compose</span>
             </div>
           </button>
