@@ -11,7 +11,7 @@ import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import LabelIcon from '@mui/icons-material/Label';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import Compose from "./compose";
-import '/home/ashmitha/Frontend/src/App.css'
+import '../App.css'
 
 
 interface labelData {
@@ -25,8 +25,11 @@ const SideBar = ({ open }: { open: boolean }) => {
 
 function composebox(){
   // e.preventDefault();
-  var x = document.getElementById("compose_box");
-  x.style.display = "block";
+  let x:  HTMLElement | null;
+  x= document.getElementById("compose_box");
+  if (x) {
+    x.style.display = "block";
+  }
 
   // return(
   //   <div className="container1">
