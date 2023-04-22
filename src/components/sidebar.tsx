@@ -98,7 +98,7 @@ const SideBar = ({filterItem, open, item, setItem}:{filterItem:any,open: boolean
       
                 <div className="feature-items" id="inbox"  onClick={()=>setItem(item)}>
                   <MailOutlinedIcon className="icons" />
-                  <span className="hidden-feature"><strong>Inbox</strong></span>
+                  <span className="hidden-feature">Inbox</span>
                   <span className="no-message">6969</span>
                 </div>
       
@@ -119,7 +119,7 @@ const SideBar = ({filterItem, open, item, setItem}:{filterItem:any,open: boolean
       
                 <div className="feature-items" id="drafts">
                   <DescriptionOutlinedIcon className='icons' />
-                  <span className="hidden-feature"><strong>Drafts</strong></span>
+                  <span className="hidden-feature">Drafts</span>
                   <span className="no-message">69</span>
                 </div>
       

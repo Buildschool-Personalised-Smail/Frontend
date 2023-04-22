@@ -6,6 +6,7 @@ import { AiOutlineLeft } from 'react-icons/ai';
 import { AiOutlineRight, AiOutlineStar } from 'react-icons/ai';
 import LabelIcon from '@mui/icons-material/Label';
 import parseFrom from '../utils/parseFrom';
+import Content from './content';
 
 // interface threadData {
 //   id: string;
@@ -21,7 +22,7 @@ import parseFrom from '../utils/parseFrom';
 //   body: string;
 // }
 
-const MidElement = ({threadsLists}:{threadsLists:any}) => {
+const MidElement = ({threadsLists,setOpen,open,setContent}:{threadsLists:any, setOpen:any, setContent:any,open:any}) => {
 //   const [gmailsMails, setGmailMails] = useState([]);
 //   const [threadsLists, setThreadLists] = useState<Array<Array<threadData>>>([]);
 //   const mails = async () => {
@@ -51,11 +52,18 @@ const MidElement = ({threadsLists}:{threadsLists:any}) => {
 //     threadsList()
 //   }, [])
 
-  
+// const [content,setContent] =useState([])
+// const handleclick = (e:any,index:any)=>{
+//   // e.setContent(threadsLists[e])
+//   <Content open={setOpen} content={e[index]}/>
+//   console.log(setOpen)
+  // e.open((prev: boolean) => !prev)
+
+// console.log(setOpen)
 
   return (
     <>
-      <div className="emaillist">
+      <div className={`emaillist ${open}`}>
         {/* <!-- Settings Starts --> */}
         <div className="emailList_settings">
 
@@ -86,47 +94,11 @@ const MidElement = ({threadsLists}:{threadsLists:any}) => {
           </div>
         </div>
 
-
-        {/* <div className="emaillist_sections">
-        <div className="section section__selected">
-          <span className="material-icons"> inbox </span>
-          <h4>Primary</h4>
-        </div>
-
-       
-        <div className="section">
-          <span className="material-icons"> people </span>
-          <h4>Social</h4>
-        </div>
-
-   
-        <div className="section">
-          <span className="material-icons"> local_offer </span>
-          <h4>Promotions</h4>
-        </div>
-    </div> */}
-        {/* // Section Ends */}
-
-        {/* // Email List Row Starts */}
         <div className="emailList_list">
-
-
-          {/* <div className="emailList_settingsRight">
-          <span className="material-icons"> chevron_left</span>
-            
-              
-          
-          <span className="material-icons"> chevron_left</span>
-          <span className="material-icons"> keyboard_hide</span>
-          <span className="material-icons"> settings</span>
-        </div> */}
-
-          {/* Email Row Starts */}
-
           {
             threadsLists.map((item:any, index:any) => {
               return (
-                <div className="emailRow" key={index}>
+                <div className="emailRow" key={index} onClick={()=>{setOpen(true) && setContent(item[0])}}>
                   <div className="emailRow__options">
                     <input type="checkbox" />
                     <span className='objects1'><AiOutlineStar /></span>
@@ -144,18 +116,7 @@ const MidElement = ({threadsLists}:{threadsLists:any}) => {
               )
             })
           }
-
-
-
-
-
-
-
-
-          {/* Email Row Ends */}
-
         </div>
-        {/* // Email List Row Ends */}
       </div>
     </>
 

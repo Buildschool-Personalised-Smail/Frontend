@@ -5,6 +5,7 @@ import MidElement from "../src/components/MIdElement";
 import {data} from "../src/components/data";
 import './App.css'
 import parseFrom from './utils/parseFrom';
+import Content from './components/content';
 
 interface threadData {
   id: string;
@@ -23,19 +24,9 @@ interface threadData {
 
 function App() {
   const [open, setOpen] = useState(true);
+  const [showcontent, setShowcontent] = useState(false);
+  const [content,setContent] =useState([])
 
-  // const [item, setItem] = useState(data);
-
-  // const labelItems = [...new Set(data.map((e) => e.category))];
-
-  // const filterItem = (curr: any) => {
-  //   const newItem = data.filter((newItem) => {
-  //     return newItem.category === curr;
-  //   });
-  //   setItem(newItem);
-  // };
-
- 
     const [gmailsMails, setGmailMails] = useState([]);
     const [threadsLists, setThreadLists] = useState<Array<Array<threadData>>>([]);
     const mails = async () => {
@@ -65,9 +56,8 @@ function App() {
       // mails();
       threadsList()
     }, [])
-  
+
 const [item, setItem] = useState(threadsLists);
-// const fromAddress = [...new Set(threadsLists.map((e:any) => e.from))];
 const filterThread = (curr: any) => {
   const newThread = threadsLists.filter((newThread:any) => {
      return parseFrom(newThread[0].from).includes(curr);
@@ -82,7 +72,8 @@ const filterThread = (curr: any) => {
         <Navbar setOpen={setOpen}/>
         <div className='container2'>
           <Sidebar open={open} item={threadsLists} filterItem={filterThread} setItem={setItem}/>
-          <MidElement threadsLists={item}/>
+          <MidElement setOpen={setShowcontent} open={showcontent} threadsLists={item} setContent={setContent}/>
+          <Content setOpen={setShowcontent} open={showcontent} content={content}/>
         </div>
       </div>
     )

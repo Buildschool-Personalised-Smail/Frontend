@@ -30,7 +30,9 @@
     width: 100%;
     transition: -0.1s;
 }
-
+/* .hidden-feature:active{
+    font-weight: 500;
+} */
 
 .features {
     padding: 1rem 0rem;
