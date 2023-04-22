@@ -9,7 +9,6 @@ import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import LabelIcon from '@mui/icons-material/Label';
-import {data} from "./data";
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import Compose from "./compose";
 import '../App.css'
@@ -84,7 +83,14 @@ const SideBar = ({filterItem, open, item, setItem}:{filterItem:any,open: boolean
 
   const [hover, setHover] = useState(false);
 
-
+  function composebox(){
+    // e.preventDefault();
+    let x:  HTMLElement | null;
+    x= document.getElementById("compose_box");
+    if (x) {
+      x.style.display = "block";
+    }
+  }
   return (
 
     <body>
@@ -100,7 +106,7 @@ const SideBar = ({filterItem, open, item, setItem}:{filterItem:any,open: boolean
           </button>
           <div className="features">
 
-            <div className="feature-items" id="inbox">
+            <div className="feature-items" id="inbox" onClick={()=>setItem(item)}>
               <MailOutlinedIcon className="icons" />
               <span className="hidden-feature">Inbox</span>
               <span className="no-message">6969</span>
@@ -141,18 +147,18 @@ const SideBar = ({filterItem, open, item, setItem}:{filterItem:any,open: boolean
             </button>
           </div>
           <div className='labelcontainer' >
-            {labelss.map((label: labelData) => {
+            {labelss.map((label) => {
               return (
-                <div className='label-items' key={label.id} onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
-                  <div className='label-icon'>
-                    <LabelIcon className="labelicon" style={{ color: 'green' }} />
-                  </div>
-                  <div className='label-name' style={{ display: open ? "flex" : "none" }}>
-                    {label.name}
-                  </div>
-                  <div className='count-unread' style={{ display: open || hover ? "flex" : "none" }}>
+                <div className='label-items' key={label.id} onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)} onClick={()=>filterItem(label.from)}>
+                <div className='label-icon'>
+                <LabelIcon className="labelicon" style={{color:`${label.color}`}}/>
+                </div>
+                <div className='label-name' style={{ display: open?"flex":"none"}}>
+                  {label.name}
+                </div>
+                <div className='count-unread'style={{ display: open||hover?"flex":"none"}}>
                   {label.count}
-                  </div>
+                </div>
                   {/* {hover? (
                       <div className='label-threedot'style={{ display: open?"flex":"none"}}>
                           <MoreVertOutlinedIcon className='label-threedot-icon'/>
