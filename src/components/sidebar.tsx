@@ -11,6 +11,9 @@ import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import LabelIcon from '@mui/icons-material/Label';
 import {data} from "./data";
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
+import Compose from "./compose";
+import '../App.css'
+
 
 interface labelData {
   id: string;
@@ -83,73 +86,74 @@ const SideBar = ({filterItem, open, item, setItem}:{filterItem:any,open: boolean
 
 
   return (
+
     <body>
 
-        <main className="main">
-      
-            <div className={`left-bar ${open}`}>
-              <button style={{border: "none"}}>
-                <div id="compose" className="compose-item">
-                  <EditOutlinedIcon className="icons" />
-                  <span className="compose-hidden">Compose</span>
-                </div>
-              </button>
-              <div className="features">
-      
-                <div className="feature-items" id="inbox"  onClick={()=>setItem(item)}>
-                  <MailOutlinedIcon className="icons" />
-                  <span className="hidden-feature">Inbox</span>
-                  <span className="no-message">6969</span>
-                </div>
-      
-                <div className="feature-items" id="starred">
-                  <GradeOutlinedIcon className="icons" />
-                  <span className="hidden-feature">Starred</span>
-                </div>
-      
-                <div className="feature-items" id="snoozed">
-                  <WatchLaterOutlinedIcon className='icons' />
-                  <span className="hidden-feature">Snoozed</span>
-                </div>
-      
-                <div className="feature-items" id="send">
-                  <SendOutlinedIcon className='icons' />
-                  <span className="hidden-feature">Sent</span>
-                </div>
-      
-                <div className="feature-items" id="drafts">
-                  <DescriptionOutlinedIcon className='icons' />
-                  <span className="hidden-feature">Drafts</span>
-                  <span className="no-message">69</span>
-                </div>
-      
-                <div className="feature-items" id="more">
-                  <ExpandMoreOutlinedIcon className='icons' />
-                  <span className="hidden-feature">More</span>
-                </div>
-      
-              </div>
-              
-              <div className="labels-heading">
-                <span className="hidden-label">Label</span>
-                <button style={{border: "none"}}>
-                  <AddOutlinedIcon className="icons" />
-                </button>
-              </div>
-              <div className='labelcontainer' >
-                {labelss.map((label)=> {
-                  return(
-                    <div className='label-items' key={label.id} onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)} onClick={()=>filterItem(label.from)}>
-                      <div className='label-icon'>
-                      <LabelIcon className="labelicon" style={{color:`${label.color}`}}/>
-                      </div>
-                      <div className='label-name' style={{ display: open?"flex":"none"}}>
-                        {label.name}
-                      </div>
-                      <div className='count-unread'style={{ display: open||hover?"flex":"none"}}>
-                        {label.count}
-                      </div>
-                      {/* {hover? (
+      <main className="main">
+
+        <div className={`left-bar ${open}`}>
+          <button className="compose_button" style={{ border: "none" }} onClick={composebox}>
+            <div id="compose" className="compose-item">
+              <EditOutlinedIcon className="icons"/>
+              <span className="compose-hidden">Compose</span>
+            </div>
+          </button>
+          <div className="features">
+
+            <div className="feature-items" id="inbox">
+              <MailOutlinedIcon className="icons" />
+              <span className="hidden-feature">Inbox</span>
+              <span className="no-message">6969</span>
+            </div>
+
+            <div className="feature-items" id="starred">
+              <GradeOutlinedIcon className="icons" />
+              <span className="hidden-feature">Starred</span>
+            </div>
+
+            <div className="feature-items" id="snoozed">
+              <WatchLaterOutlinedIcon className='icons' />
+              <span className="hidden-feature">Snoozed</span>
+            </div>
+
+            <div className="feature-items" id="send">
+              <SendOutlinedIcon className='icons' />
+              <span className="hidden-feature">Sent</span>
+            </div>
+
+            <div className="feature-items" id="drafts">
+              <DescriptionOutlinedIcon className='icons' />
+              <span className="hidden-feature">Drafts</span>
+              <span className="no-message">69</span>
+            </div>
+
+            <div className="feature-items" id="more">
+              <ExpandMoreOutlinedIcon className='icons' />
+              <span className="hidden-feature">More</span>
+            </div>
+
+          </div>
+
+          <div className="labels-heading">
+            <span className="hidden-label">Label</span>
+            <button style={{ border: "none" }}>
+              <AddOutlinedIcon className="icons" />
+            </button>
+          </div>
+          <div className='labelcontainer' >
+            {labelss.map((label: labelData) => {
+              return (
+                <div className='label-items' key={label.id} onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)}>
+                  <div className='label-icon'>
+                    <LabelIcon className="labelicon" style={{ color: 'green' }} />
+                  </div>
+                  <div className='label-name' style={{ display: open ? "flex" : "none" }}>
+                    {label.name}
+                  </div>
+                  <div className='count-unread' style={{ display: open || hover ? "flex" : "none" }}>
+                  {label.count}
+                  </div>
+                  {/* {hover? (
                       <div className='label-threedot'style={{ display: open?"flex":"none"}}>
                           <MoreVertOutlinedIcon className='label-threedot-icon'/>
                       </div>):""} */}

@@ -2,7 +2,7 @@ import React , { useState, useEffect } from 'react'
 import Sidebar from "./components/sidebar";
 import Navbar from "./components/navbar";
 import MidElement from "../src/components/MIdElement";
-import {data} from "../src/components/data";
+import Compose from "./components/compose";
 import './App.css'
 // import parseFrom2 from './utils/parseFrom2';
 import Content from './components/content';
@@ -73,9 +73,11 @@ const filterThread = (curr: any) => {
         <Navbar setOpen={setOpen}/>
         <div className='container2'>
           <Sidebar open={open} item={threadsLists} filterItem={filterThread} setItem={setItem}/>
+          <Compose/>
           <MidElement setOpen={setShowcontent} open={showcontent} threadsLists={item} setContent={setContent}/>
           <Content setOpen={setShowcontent} open={showcontent} content={content}/>
         </div>
+
       </div>
     )
   )

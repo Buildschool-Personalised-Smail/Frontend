@@ -1,0 +1,209 @@
+.modal {
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 600px;
+    height: 650px;
+    border-radius: 10px;
+    position: absolute;
+    left: 300px;
+    top: 300px;
+    background-color: #ffffff;
+    z-index: 1000;
+    /* top: 50%;  */
+
+}
+
+.new_message {
+    z-index: 1000;
+    width: 581px;
+    height: 18px;
+    padding: 10px 0 10px 16px;
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    font-size: .875rem;
+    background-color: #e8e8e8;
+    font-weight: 500;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.to {
+    z-index: 1000;
+    border-bottom: 1px solid #e8e8e8;
+    width: 581px;
+    height: 18px;
+    padding: 10px 0 10px 16px;
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    font-size: .875rem;
+    display: flex;
+    align-items: center;
+}
+
+.to_input {
+    border: none;
+    width: 510px;
+    margin-left: 10px;
+    height: max-content;
+    background:none;
+}
+
+.subject {
+    border-bottom: 1px solid #e8e8e8;
+    width: 581px;
+    height: 18px;
+    padding: 10px 0 10px 16px;
+    color: #222;
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    font-size: .875rem;
+}
+
+.button_send {
+    
+    border-radius: 18px;
+    width: 105px;
+    height: 36px;
+    margin-left: 16px;
+    background-color: #0b57d0;
+    color: white;
+    display: inline-block;
+
+}
+
+.send_text {
+    font-size: .875rem;
+    font-weight: 500;
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+}
+
+.end {
+    margin-left: 459px;
+    margin-right: 5px;
+    margin-bottom: 50px;
+}
+
+.new {
+    border: none;
+
+}
+
+
+.input {
+    padding: 16px 0 226px 16px;
+    border: none;
+    width: 580px;
+    height: 150px;
+
+
+}
+.options{
+    display: flex;
+    flex-direction: row;
+    
+}
+.attach img{
+    padding-top: 5px;
+    height: 20px;
+}
+.attach{
+    border: none;
+    background-color: white;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+
+.contacts{
+    border: none;
+    background-color: none;
+}
+
+.contactbook{
+    position: relative;
+    display: inline-block;
+}
+
+.contact-categories{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+    left: 50px;
+    top: -20px;
+
+}
+
+.contact-categories button{
+    padding: 12px 16px;
+    display: block;
+    width: 200px;
+    background-color: #e8e8e8;
+
+}
+
+.show {display:block;}
+
+.department{
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+    left: 214px;
+    top: 0px;
+}
+
+.hostel{
+    position: absolute;
+    left: 214px;
+    z-index: 1;
+    top: 48px;
+    width: 160px;
+
+
+}
+
+.office{
+    position: absolute;
+    left: 214px;
+    z-index: 1;
+    top: 96px;
+    width: 160px;
+
+}
+
+.academics{
+    position: absolute;
+    left: 214px;
+    z-index: 1;
+    top: 144px;
+    width: 160px;
+
+}
+
+.food{
+    position: absolute;
+    left: 214px;
+    z-index: 1;
+    top: 192px;
+    width: 160px;
+
+}
+
+.student{
+    position: absolute;
+    left: 214px;
+    z-index: 1;
+    top: 240px;
+    width: 160px;
+
+}
+
+.other{
+    position: absolute;
+    left: 214px;
+    z-index: 1;
+    top: 288px;
+    width: 160px;
+}
+
+.select option{
+    overflow-y: scroll;
+}
+
