@@ -4,8 +4,9 @@ import Navbar from "./components/navbar";
 import MidElement from "../src/components/MIdElement";
 import {data} from "../src/components/data";
 import './App.css'
-import parseFrom from './utils/parseFrom';
+// import parseFrom2 from './utils/parseFrom2';
 import Content from './components/content';
+import parseFrom1 from './utils/parseFrom1';
 
 interface threadData {
   id: string;
@@ -60,7 +61,7 @@ function App() {
 const [item, setItem] = useState(threadsLists);
 const filterThread = (curr: any) => {
   const newThread = threadsLists.filter((newThread:any) => {
-     return parseFrom(newThread[0].from).includes(curr);
+     return parseFrom1(newThread[0].from).includes(curr);
   });
   console.log(newThread);
   setItem(newThread);

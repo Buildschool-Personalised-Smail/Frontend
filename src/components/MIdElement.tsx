@@ -5,7 +5,7 @@ import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { AiOutlineLeft } from 'react-icons/ai';
 import { AiOutlineRight, AiOutlineStar } from 'react-icons/ai';
 import LabelIcon from '@mui/icons-material/Label';
-import parseFrom from '../utils/parseFrom';
+import parseFrom1 from '../utils/parseFrom1';
 import Content from './content';
 
 // interface threadData {
@@ -98,13 +98,13 @@ const MidElement = ({threadsLists,setOpen,open,setContent}:{threadsLists:any, se
           {
             threadsLists.map((item:any, index:any) => {
               return (
-                <div className="emailRow" key={index} onClick={()=>{setOpen(true) && setContent(item[0])}}>
+                <div className="emailRow" key={index} onClick={()=>{setOpen(true),setContent(item[0])}}>
                   <div className="emailRow__options">
                     <input type="checkbox" />
                     <span className='objects1'><AiOutlineStar /></span>
                     {/* <span className='objects'><LabelIcon /></span> */}
                   </div>
-                  <div className='objects'>{parseFrom(item[0].from)}</div>
+                  <div className='objects'>{parseFrom1(item[0].from)}</div>
 
                   <div className="emailRow__message">
                     <span className="emailRow__description"><b>{item[0].subject}</b>-{item[0].snippet}</span>
