@@ -3,6 +3,8 @@ import Sidebar from "./components/sidebar";
 import Navbar from "./components/navbar";
 import MidElement from "../src/components/MIdElement";
 import Compose from "./components/compose";
+import Label from "./components/new_label";
+
 import './App.css'
 // import parseFrom2 from './utils/parseFrom2';
 import Content from './components/content';
@@ -76,6 +78,7 @@ const filterThread = (curr: any) => {
           <Compose/>
           <MidElement setOpen={setShowcontent} open={showcontent} threadsLists={item} setContent={setContent}/>
           <Content setOpen={setShowcontent} open={showcontent} content={content}/>
+          <Label/>
         </div>
 
       </div>

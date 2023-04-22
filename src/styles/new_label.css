@@ -1,0 +1,34 @@
+.input_form{
+    display: flex;
+    flex-direction: column;
+    background-color: none;
+
+}
+
+.input_label {
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 500px;
+    height: 215px;
+    position: absolute;
+    left: 750px;
+    top: 300px;
+    padding: 10px;
+    /* z-index: 1000; */
+    /* top: 50%;  */
+
+}
+
+.submit_label_input{
+    margin-top: 10px;
+    margin-left: 370px;
+    padding: 5px;
+    width: 100px;
+    background-color: #e8e8e8;
+
+}
+
+.close{
+    border: none;
+    margin-left: 350px;
+}

@@ -11,8 +11,8 @@ import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import LabelIcon from '@mui/icons-material/Label';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import Compose from "./compose";
-import '../App.css'
-
+import '../App.css';
+import Label from "./new_label";
 
 interface labelData {
   id: string;
@@ -83,13 +83,39 @@ const SideBar = ({filterItem, open, item, setItem}:{filterItem:any,open: boolean
 
   const [hover, setHover] = useState(false);
 
-  function composebox(){
-    // e.preventDefault();
-    let x:  HTMLElement | null;
-    x= document.getElementById("compose_box");
-    if (x) {
-      x.style.display = "block";
-    }
+function composebox(){
+  // e.preventDefault();
+  var x = document.getElementById("compose_box");
+  x!.style.display = "block";
+
+  // return(
+  //   <div className="container1">
+  //   </div>
+  //   )
+}
+
+function add_label(){
+  var x = document.getElementById("input_label");
+  // x!.style.display = "block";
+  if (x!.style.display === "none"){
+    x!.style.display = "block";
+  }
+  else{
+    x!.style.display = "none";
+  }
+}
+
+  const [labels, setLabels] = useState([])
+  const labelFetch = async () => {
+    const result = await fetch('http://localhost:8000/labelsget').then(async (res: any) => {
+      // console.log(res.json());
+      let resp = await res.json();
+      return resp;
+    }).then((res: any) => {
+      setLabels(res);
+      console.log(res)
+      return res;
+    })
   }
   return (
 
@@ -142,9 +168,12 @@ const SideBar = ({filterItem, open, item, setItem}:{filterItem:any,open: boolean
 
           <div className="labels-heading">
             <span className="hidden-label">Label</span>
-            <button style={{ border: "none" }}>
+            <button style={{ border: "none" }} onClick = {add_label}>
               <AddOutlinedIcon className="icons" />
             </button>
+
+            
+
           </div>
           <div className='labelcontainer' >
             {labelss.map((label) => {
