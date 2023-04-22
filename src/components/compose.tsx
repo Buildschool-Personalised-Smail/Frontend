@@ -118,7 +118,7 @@ const Compose = () => {
 
 
     function contact_dropdown() {
-        var x = document.getElementById("contact_dropdown");
+        var x:any = document.getElementById("contact_dropdown");
         if (x!.style.display === "none") {
             x!.style.display = "block";
         } else {
@@ -131,22 +131,22 @@ const Compose = () => {
                 for (let i = 0; i < departments.length; i++){
                     let new_option = new Option(departments[i][0] + ':' + departments[i][1], departments[i][1]);
                     
-                    const select = document.querySelector('#dept');
+                    const select:any = document.querySelector('#dept');
                     select!.add(new_option, undefined);
                 }
                 opt_dept=false;
             }
             
             
-            var y = document.getElementById("contact_dropdown");
-            var x = document.getElementById("depart");
+            var y:any = document.getElementById("contact_dropdown");
+            var x:any = document.getElementById("depart");
 
-            var a = document.getElementById("host");
-            var b = document.getElementById("off");
-            var c = document.getElementById("acad");
-            var d = document.getElementById("foo");
-            var e = document.getElementById("stud");
-            var f = document.getElementById("oth");
+            var a:any = document.getElementById("host");
+            var b:any = document.getElementById("off");
+            var c:any = document.getElementById("acad");
+            var d:any = document.getElementById("foo");
+            var e:any = document.getElementById("stud");
+            var f:any = document.getElementById("oth");
 
 
 
@@ -171,10 +171,10 @@ const Compose = () => {
         }
 
         function to_id_department(){
-            var x = document.getElementById("to_email");
-            var y = document.getElementById("dept");
-            var z = document.getElementById("depart");
-            var w = document.getElementById("contact_dropdown");
+            var x:any = document.getElementById("to_email");
+            var y:any = document.getElementById("dept");
+            var z:any = document.getElementById("depart");
+            var w:any = document.getElementById("contact_dropdown");
           
 
             var email = y!.value;
@@ -193,19 +193,19 @@ const Compose = () => {
             if(opt_hostel){
                 for (let i = 0; i < hostels.length; i++){
                     let new_option = new Option(hostels[i][0] + ':' + hostels[i][1], hostels[i][1]);
-                    const select = document.querySelector('#hostel_select');
+                    const select:any = document.querySelector('#hostel_select');
                     select!.add(new_option, undefined);
                 }
                 opt_hostel = false;
             }
             
             
-            var a = document.getElementById("depart");
-            var b = document.getElementById("off")
-            var c = document.getElementById("acad");
-            var d = document.getElementById("foo");
-            var e = document.getElementById("stud");
-            var f = document.getElementById("oth");
+            var a:any = document.getElementById("depart");
+            var b:any = document.getElementById("off")
+            var c:any = document.getElementById("acad");
+            var d:any = document.getElementById("foo");
+            var e:any = document.getElementById("stud");
+            var f:any = document.getElementById("oth");
 
             a!.style.display = "none";
             b!.style.display = "none";
@@ -219,8 +219,8 @@ const Compose = () => {
 
 
             
-            var y = document.getElementById("contact_dropdown");
-            var x = document.getElementById("host");
+            var y:any = document.getElementById("contact_dropdown");
+            var x:any = document.getElementById("host");
         if (x!.style.display === "none") {
             x!.style.display = "block";
         } else {
@@ -229,13 +229,13 @@ const Compose = () => {
         }
 
         function to_id_hostel(){
-            var x = document.getElementById("to_email");
-            var y = document.getElementById("hostel_select");
+            var x:any = document.getElementById("to_email");
+            var y:any = document.getElementById("hostel_select");
 
             var email = y!.value;
 
-            var z = document.getElementById("host");
-            var w = document.getElementById("contact_dropdown");
+            var z:any = document.getElementById("host");
+            var w:any = document.getElementById("contact_dropdown");
 
 
             var email = y!.value;
@@ -253,19 +253,19 @@ const Compose = () => {
             if(opt_office){
                 for (let i = 0; i < offices.length; i++){
                     let new_option = new Option(offices[i][0] + ':' + offices[i][1], offices[i][1]);
-                    const select = document.querySelector('#office_select');
+                    const select:any = document.querySelector('#office_select');
                     select!.add(new_option, undefined);
                 }
                 opt_office = false;
             }
             
             
-            var a = document.getElementById("depart");
-            var b = document.getElementById("host");
-            var c = document.getElementById("acad");
-            var d = document.getElementById("foo");
-            var e = document.getElementById("stud");
-            var f = document.getElementById("oth");
+            var a:any = document.getElementById("depart");
+            var b:any = document.getElementById("host");
+            var c:any = document.getElementById("acad");
+            var d:any = document.getElementById("foo");
+            var e:any = document.getElementById("stud");
+            var f:any = document.getElementById("oth");
 
             a!.style.display = "none";
             b!.style.display = "none";
@@ -274,7 +274,7 @@ const Compose = () => {
             e!.style.display = "none";
             f!.style.display = "none";
             
-            var x = document.getElementById("off");
+            var x:any = document.getElementById("off");
         if (x!.style.display === "none") {
             x!.style.display = "block";
         } else {
@@ -283,13 +283,13 @@ const Compose = () => {
         }
 
         function to_id_office(){
-            var x = document.getElementById("to_email");
-            var y = document.getElementById("office_select");
+            var x:any = document.getElementById("to_email");
+            var y:any = document.getElementById("office_select");
 
             var email = y!.value;
 
-            var z = document.getElementById("off");
-            var w = document.getElementById("contact_dropdown");
+            var z:any = document.getElementById("off");
+            var w:any = document.getElementById("contact_dropdown");
 
 
             var email = y!.value;
@@ -307,19 +307,19 @@ const Compose = () => {
             if(opt_acads){
                 for (let i = 0; i < acads.length; i++){
                     let new_option = new Option(acads[i][0] + ':' + acads[i][1], acads[i][1]);
-                    const select = document.querySelector('#academic_select');
+                    const select:any = document.querySelector('#academic_select');
                     select!.add(new_option, undefined);
                 }
                 opt_acads = false;
             }
             
             
-            var a = document.getElementById("depart");
-            var b = document.getElementById("host");
-            var c = document.getElementById("off");
-            var d = document.getElementById("foo");
-            var e = document.getElementById("stud");
-            var f = document.getElementById("oth");
+            var a:any = document.getElementById("depart");
+            var b:any = document.getElementById("host");
+            var c:any = document.getElementById("off");
+            var d:any = document.getElementById("foo");
+            var e:any = document.getElementById("stud");
+            var f:any = document.getElementById("oth");
 
             a!.style.display = "none";
             b!.style.display = "none";
@@ -332,7 +332,7 @@ const Compose = () => {
 
 
             
-            var x = document.getElementById("acad");
+            var x:any = document.getElementById("acad");
         if (x!.style.display === "none") {
             x!.style.display = "block";
         } else {
@@ -341,13 +341,13 @@ const Compose = () => {
         }
 
         function to_id_academics(){
-            var x = document.getElementById("to_email");
-            var y = document.getElementById("academic_select");
+            var x:any = document.getElementById("to_email");
+            var y:any = document.getElementById("academic_select");
 
             var email = y!.value;
 
-            var z = document.getElementById("acad");
-            var w = document.getElementById("contact_dropdown");
+            var z:any = document.getElementById("acad");
+            var w:any = document.getElementById("contact_dropdown");
 
 
             var email = y!.value;
@@ -364,19 +364,19 @@ const Compose = () => {
             if(opt_foo){
                 for (let i = 0; i < foods.length; i++){
                     let new_option = new Option(foods[i][0] + ':' + foods[i][1], foods[i][1]);
-                    const select = document.querySelector('#food_select');
+                    const select:any = document.querySelector('#food_select');
                     select!.add(new_option, undefined);
                 }
                 opt_foo = false;
             }
             
             
-            var a = document.getElementById("depart");
-            var b = document.getElementById("host");
-            var c = document.getElementById("off");
-            var d = document.getElementById("acad");
-            var e = document.getElementById("stud");
-            var f = document.getElementById("oth");
+            var a:any = document.getElementById("depart");
+            var b:any = document.getElementById("host");
+            var c:any = document.getElementById("off");
+            var d:any = document.getElementById("acad");
+            var e:any = document.getElementById("stud");
+            var f:any = document.getElementById("oth");
 
             a!.style.display = "none";
             b!.style.display = "none";
@@ -389,7 +389,7 @@ const Compose = () => {
 
 
             
-            var x = document.getElementById("foo");
+            var x:any = document.getElementById("foo");
         if (x!.style.display === "none") {
             x!.style.display = "block";
         } else {
@@ -398,13 +398,13 @@ const Compose = () => {
         }
 
         function to_id_food(){
-            var x = document.getElementById("to_email");
-            var y = document.getElementById("food_select");
+            var x:any = document.getElementById("to_email");
+            var y:any = document.getElementById("food_select");
 
             var email = y!.value;
 
-            var z = document.getElementById("foo");
-            var w = document.getElementById("contact_dropdown");
+            var z:any = document.getElementById("foo");
+            var w:any = document.getElementById("contact_dropdown");
 
 
             var email = y!.value;
@@ -421,19 +421,19 @@ const Compose = () => {
             if(opt_stud){
                 for (let i = 0; i < students.length; i++){
                     let new_option = new Option(students[i][0] + ':' + students[i][1], students[i][1]);
-                    const select = document.querySelector('#student_select');
+                    const select:any = document.querySelector('#student_select');
                     select!.add(new_option, undefined);
                 }
                 opt_foo = false;
             }
             
             
-            var a = document.getElementById("depart");
-            var b = document.getElementById("host");
-            var c = document.getElementById("off");
-            var d = document.getElementById("acad");
-            var e = document.getElementById("foo");
-            var f = document.getElementById("oth");
+            var a:any = document.getElementById("depart");
+            var b:any = document.getElementById("host");
+            var c:any = document.getElementById("off");
+            var d:any = document.getElementById("acad");
+            var e:any = document.getElementById("foo");
+            var f:any = document.getElementById("oth");
 
             a.style.display = "none";
             b.style.display = "none";
@@ -442,7 +442,7 @@ const Compose = () => {
             e.style.display = "none";
             f.style.display = "none";
   
-            var x = document.getElementById("stud");
+            var x:any = document.getElementById("stud");
         if (x!.style.display === "none") {
             x!.style.display = "block";
         } else {
@@ -451,13 +451,13 @@ const Compose = () => {
         }
 
         function to_id_student(){
-            var x = document.getElementById("to_email");
-            var y = document.getElementById("student_select");
+            var x:any = document.getElementById("to_email");
+            var y:any = document.getElementById("student_select");
 
             var email = y!.value;
 
-            var z = document.getElementById("stud");
-            var w = document.getElementById("contact_dropdown");
+            var z:any = document.getElementById("stud");
+            var w:any = document.getElementById("contact_dropdown");
 
 
             var email = y!.value;
@@ -474,19 +474,19 @@ const Compose = () => {
             if(opt_oth){
                 for (let i = 0; i < others.length; i++){
                     let new_option = new Option(others[i][0] + ':' + others[i][1], others[i][1]);
-                    const select = document.querySelector('#other_select');
+                    const select:any = document.querySelector('#other_select');
                     select!.add(new_option, undefined);
                 }
                 opt_oth = false;
             }
             
             
-            var a = document.getElementById("depart");
-            var b = document.getElementById("host");
-            var c = document.getElementById("off");
-            var d = document.getElementById("acad");
-            var e = document.getElementById("foo");
-            var f = document.getElementById("stud");
+            var a:any = document.getElementById("depart");
+            var b:any = document.getElementById("host");
+            var c:any = document.getElementById("off");
+            var d:any = document.getElementById("acad");
+            var e:any = document.getElementById("foo");
+            var f:any = document.getElementById("stud");
 
             a!.style.display = "none";
             b!.style.display = "none";
@@ -495,7 +495,7 @@ const Compose = () => {
             e!.style.display = "none";
             f!.style.display = "none";
 
-            var x = document.getElementById("oth");
+            var x:any = document.getElementById("oth");
         if (x!.style.display === "none") {
             x!.style.display = "block";
         } else {
@@ -504,13 +504,13 @@ const Compose = () => {
         }
 
         function to_id_other(){
-            var x = document.getElementById("to_email");
-            var y = document.getElementById("other_select");
+            var x:any = document.getElementById("to_email");
+            var y:any = document.getElementById("other_select");
 
             var email = y!.value;
 
-            var z = document.getElementById("oth");
-            var w = document.getElementById("contact_dropdown");
+            var z:any = document.getElementById("oth");
+            var w:any = document.getElementById("contact_dropdown");
 
 
             var email = y!.value;
@@ -528,13 +528,13 @@ const Compose = () => {
         
 
         function close_modal(){
-            var x = document.getElementById("compose_box");
+            var x:any = document.getElementById("compose_box");
             x!.style.display = "none";
         }
 
         function minimize(){
-            var x = document.getElementById("hidden");
-            var y = document.getElementById("compose_box");
+            var x:any = document.getElementById("hidden");
+            var y:any = document.getElementById("compose_box");
             if( x!.style.display == "none"){
                 x!.style.display = "block";
                 y!.style.height = '650px';
@@ -550,7 +550,7 @@ const Compose = () => {
         // function select_menu(){
         //     for (let i = 0; i < departments.length; i++){
         //         let new_option = new Option(departments[i][0] + ':' + departments[i][1], departments[i][1]);
-        //         const select = document.querySelector('#dept');
+        //         const select:any = document.querySelector('#dept');
         //         select.add(new_option, undefined);
         //     }
         // }

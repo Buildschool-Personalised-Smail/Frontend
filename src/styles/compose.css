@@ -7,12 +7,14 @@
     position: absolute;
     left: 300px;
     top: 300px;
-    /* z-index: 1000; */
+    background-color: #ffffff;
+    z-index: 1000;
     /* top: 50%;  */
 
 }
 
 .new_message {
+    z-index: 1000;
     width: 581px;
     height: 18px;
     padding: 10px 0 10px 16px;
@@ -25,6 +27,7 @@
 }
 
 .to {
+    z-index: 1000;
     border-bottom: 1px solid #e8e8e8;
     width: 581px;
     height: 18px;
