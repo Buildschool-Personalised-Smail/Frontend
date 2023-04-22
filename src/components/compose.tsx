@@ -557,7 +557,7 @@ const Compose = () => {
 
     return(
         
-        <div id = "compose_box" className = "modal" style = {{display : "block"}}>
+        <div id = "compose_box" className = "modal" style = {{display : "none"}}>
             <div className = "new_message">
                 <a>
                     New Message

@@ -3,6 +3,8 @@ import Sidebar from "./components/sidebar";
 import Navbar from "./components/navbar";
 import MidElement from "../src/components/MIdElement";
 import Compose from "./components/compose";
+import Label from "./components/new_label";
+
 import './App.css'
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
           <Sidebar open={open}/>
           <Compose/>
           <MidElement/>
+          <Label/>
+
 
         </div>
 

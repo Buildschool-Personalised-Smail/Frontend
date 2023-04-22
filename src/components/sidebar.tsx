@@ -11,6 +11,7 @@ import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import LabelIcon from '@mui/icons-material/Label';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import Compose from "./compose";
+import Label from "./new_label";
 import '/home/ashmitha/Frontend/src/App.css'
 
 
@@ -26,12 +27,23 @@ const SideBar = ({ open }: { open: boolean }) => {
 function composebox(){
   // e.preventDefault();
   var x = document.getElementById("compose_box");
-  x.style.display = "block";
+  x!.style.display = "block";
 
   // return(
   //   <div className="container1">
   //   </div>
   //   )
+}
+
+function add_label(){
+  var x = document.getElementById("input_label");
+  // x!.style.display = "block";
+  if (x!.style.display === "none"){
+    x!.style.display = "block";
+  }
+  else{
+    x!.style.display = "none";
+  }
 }
 
   const [labels, setLabels] = useState([])
@@ -132,9 +144,12 @@ function composebox(){
 
           <div className="labels-heading">
             <span className="hidden-label">Label</span>
-            <button style={{ border: "none" }}>
+            <button style={{ border: "none" }} onClick = {add_label}>
               <AddOutlinedIcon className="icons" />
             </button>
+
+            
+
           </div>
           <div className='labelcontainer' >
             {labels.map((label: labelData) => {
