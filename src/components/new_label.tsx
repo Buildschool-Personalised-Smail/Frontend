@@ -7,26 +7,30 @@ const Label= () => {
         var x = document.getElementById("input_label");
         x!.style.display = "none";
     }
-    const[state,setState]=useState({...labelss})
+    const[state,setState]=useState([labelss])
+    const [name,setName]=useState("");
+    const [color,setColor]=useState("");
+    const [mail,setMail]=useState("");
     const saveName = (e:any) => {
       const name=e.target.value;
-      setState((e1:any)=>e1.name=name);
+      setName(name);
     };
     const saveMail = (e:any) => {
       const mail=e.target.value;
-      setState((e1:any)=>e1.from=mail);
+      setMail(mail);
     };
     const saveColour = (e:any) => {
       const colour=e.target.value;
-      setState((e1:any)=>e1.color=colour);
+      setColor(colour);
     };
     const addNewItem = (e:any) => {
       const copy = [...labelss];
-      copy.push(state);
-      e.setState(copy);
-      e.setName("");
-      e.setColour("");
-      e.setMail("");
+      // copy.push(state);
+      // setState(prev => new Set(prev.add([]))))
+      // labelss.push(...state);
+      // setName("");
+      // setColour("");
+      // setMail("");
     };
     console.log(labelss);
     console.log(state);
