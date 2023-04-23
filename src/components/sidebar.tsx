@@ -12,74 +12,45 @@ import LabelIcon from '@mui/icons-material/Label';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import Compose from "./compose";
 import '../App.css';
+import '../styles/new_label.css';
+import labelss from './labels';
+
 import Label from "./new_label";
 
-interface labelData {
-  id: string;
-  name: string;
-}
 
+// export const labelss = [
+//    {
+//      id:1,
+//      name: "Codeforces",
+//      from: "noreply@codeforces.com",
+//      count: "14",
+//      color: "lightpink",
+//    },
+//    {
+//      id:2,
+//      name: "Coursera",
+//      from: "Coursera",
+//      count: "",
+//      color: "green",
+//    },
+//    {
+//      id:3,
+//      name: "LeetCode",
+//      from: "LeetCode",
+//      count: "20",
+//      color: "blue",
+//    },
+//    {
+//      id:4,
+//      name: "LinkedIn",
+//      from: "LinkedIn",
+//      count: "7",
+//      color: "red",
+//    },
+//  ]
 const SideBar = ({filterItem, open, item, setItem}:{filterItem:any,open: boolean,item:any, setItem:any}) => {
-  // const [labels, setLabels] = useState([])
-  // const labelFetch = async () => {
-  //   const result = await fetch('http://localhost:8000/labelsget').then(async (res: any) => {
-  //     // console.log(res.json());
-  //     let resp = await res.json();
-  //     return resp;
-  //   }).then((res: any) => {
-  //     setLabels(res);
-  //     console.log(res)
-  //     return res;
-  //   })
-  // }
-  // useEffect(() => {
-  //   // mails();
-  //   labelFetch();
-  // }, [])
 
-  const labelss = [
-    {
-      id:1,
-      name: "Codeforces",
-      from: "noreply@codeforces.com",
-      count: "14",
-      color: "lightpink",
-    },
-    {
-      id:2,
-      name: "Coursera",
-      from: "Coursera",
-      count: "",
-      color: "green",
-    },
-    {
-      id:3,
-      name: "LeetCode",
-      from: "LeetCode",
-      count: "20",
-      color: "blue",
-    },
-    {
-      id:4,
-      name: "LinkedIn",
-      from: "LinkedIn",
-      count: "7",
-      color: "red",
-    },
-    // {
-    //   id:5,
-    //   name: "Codeforces",
-    //   from: "noreply@codeforces.com",
-    //   count: "3",
-    //   color: "purple",    
-    // },
-    // {
-    //   id:6,
-    //   name:  labelItems[1],
-    //   count: "3",
-    //   color: "purple",
-    // },
-  ]
+
 
   const [hover, setHover] = useState(false);
 
@@ -87,11 +58,6 @@ function composebox(){
   // e.preventDefault();
   var x = document.getElementById("compose_box");
   x!.style.display = "block";
-
-  // return(
-  //   <div className="container1">
-  //   </div>
-  //   )
 }
 
 function add_label(){
@@ -104,19 +70,49 @@ function add_label(){
     x!.style.display = "none";
   }
 }
+// const Label= () => {
+//   function close(){
+//       var x = document.getElementById("input_label");
+//       x!.style.display = "none";
+//   }
+//   const[state,setState]=useState(labelss)
+//   const saveName = (e:any) => {
+//     const name=e.target.value;
+//     setState((e1:any)=>e1.name=name);
+//   };
+//   const saveMail = (e:any) => {
+//     const mail=e.target.value;
+//     setState((e1:any)=>e1.from=mail);
+//   };
+//   const saveColour = (e:any) => {
+//     const colour=e.target.value;
+//     setState((e1:any)=>e1.color=colour);
+//   };
+//   const addNewItem = (e:any) => {
+//     const copy = [...labelss];
+//     copy.push(state);
+//     e.setState(copy);
+//     e.setName("");
+//     e.setColour("");
+//     e.setMail("");
+//   };
+//   console.log(labelss);
+//   console.log(state);
+//   return(
+//       <div className = "input_label" id="input_label" style = {{display: "none"}}>
+//           <form className="input_form">
+//           <label>Label Name: <button className="close" onClick={close}>x</button></label><input type="text" name="label name" onChange={saveName}/>
+//           <br/>
+//           <label>Sender Email: </label><input type="text" name="sender" onChange={saveMail}/>
+//           </form>
+//           <label>Label Colour: </label><input type="text" name="colour" onChange={saveColour}/>
+//           <br/>
+//           <button className="submit_label_input" onClick={addNewItem}>Create Label</button>
+//       </div>
+//   )
+  
+// }
 
-  const [labels, setLabels] = useState([])
-  const labelFetch = async () => {
-    const result = await fetch('http://localhost:8000/labelsget').then(async (res: any) => {
-      // console.log(res.json());
-      let resp = await res.json();
-      return resp;
-    }).then((res: any) => {
-      setLabels(res);
-      console.log(res)
-      return res;
-    })
-  }
   return (
 
     <body>
