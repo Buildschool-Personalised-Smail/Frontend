@@ -8,7 +8,7 @@
 
 }
 .email.true{
-  width:1179px;
+  width:79vw;
   padding: 0 20px 0 20px;
   background-color: white;
   height: 90vh;
@@ -59,7 +59,7 @@
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 8px;
-  padding-left: 72px;
+  padding-left: 0px;
   display: flex;
   background-color: white;
   border-bottom: 1px solid whitesmoke;

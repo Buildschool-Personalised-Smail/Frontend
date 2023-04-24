@@ -59,7 +59,7 @@ return(
                         </div>
                     </div> 
                         <div className="id_right">
-                            <div>{content.internalDate}</div>
+                            <div>{content.date}</div>
                             <div className="material-icons"><MdStarBorder/></div>
                             <div className="material-icons"><MdReply/></div>
                             <div className="material-icons"><MdMoreVert/></div>

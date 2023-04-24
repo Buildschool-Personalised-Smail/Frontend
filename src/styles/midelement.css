@@ -2,11 +2,13 @@
     display: flex;
     height: 100vh;
     border-radius: 12px;
+    margin-left: 12px;
 }
 
 body {
     /* height: 100vh; */
     overflow-y: hidden;
+    font-size: small;
 }
 .emaillist.true{
     display: none;
@@ -15,7 +17,7 @@ body {
     display: block;
 } */
 .emaillist.false {
-    padding: 0 20px 0 20px;
+    padding: 0 10px 0 10px;
     /* border: 0.5px solid black; */
     border-radius: 12px;
     width: 100% !important;
@@ -145,7 +147,6 @@ body {
     border-width: 3px;
     color: red;
     border-bottom: 3px solid red;
-
 }
 
 .section_selected .material-icons {
@@ -159,7 +160,7 @@ body {
 
 .section h4 {
     font-size: 14px;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .emailRow__options {
@@ -217,10 +218,10 @@ input {
 }
 
 .emailRow__time {
-    padding-right: 15px;
-    font-size: 15px;
-    font-weight: bold;
-    width: 72px;
+    padding-right: 5px;
+    font-size: 10px;
+    /* font-weight: bold; */
+    width: 60px;
     height: 20px;
 }
 
@@ -246,7 +247,7 @@ input {
 .objects {
     text-align: left;
     margin-inline: 10px;
-    width: 200px;
+    width: 100px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

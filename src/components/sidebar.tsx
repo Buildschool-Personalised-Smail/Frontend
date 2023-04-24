@@ -14,46 +14,44 @@ import Compose from "./compose";
 import '../App.css';
 import '../styles/new_label.css';
 import labelss from './labels';
+import axios from "axios";
 
 import Label from "./new_label";
 
-
-// export const labelss = [
-//    {
-//      id:1,
-//      name: "Codeforces",
-//      from: "noreply@codeforces.com",
-//      count: "14",
-//      color: "lightpink",
-//    },
-//    {
-//      id:2,
-//      name: "Coursera",
-//      from: "Coursera",
-//      count: "",
-//      color: "green",
-//    },
-//    {
-//      id:3,
-//      name: "LeetCode",
-//      from: "LeetCode",
-//      count: "20",
-//      color: "blue",
-//    },
-//    {
-//      id:4,
-//      name: "LinkedIn",
-//      from: "LinkedIn",
-//      count: "7",
-//      color: "red",
-//    },
-//  ]
+interface LabelType {
+  id: string;
+  name: string;
+  messageListVisibility: string;
+  labelListVisibility: string;
+  type: string;
+  messagesTotal: number;
+  messagesUnread: number;
+  threadsTotal: number;
+  threadsUnread: number;
+}
 const SideBar = ({filterItem, open, item, setItem}:{filterItem:any,open: boolean,item:any, setItem:any}) => {
-
-
-
   const [hover, setHover] = useState(false);
-
+  const [labels, setLabels]= useState<Array<LabelType>>([]);
+  const [loading, setLoading]= useState(true);
+  const labelsList = async () => {
+      try {
+        const url= "http://localhost:8000/profile/labelsget";
+        const { data: data2 }= await axios.get(url, { withCredentials: true });
+        // setThreadList(data.threads);
+        setLabels(data2);
+        setLoading(!loading);
+        // console.log(data);
+      }
+      catch(e) {
+        console.error(e);
+      }
+    }
+    
+    useEffect(() => {
+      // mails();
+      labelsList();
+    }, [])
+// console.log(labels)
 function composebox(){
   // e.preventDefault();
   var x = document.getElementById("compose_box");
@@ -70,48 +68,9 @@ function add_label(){
     x!.style.display = "none";
   }
 }
-// const Label= () => {
-//   function close(){
-//       var x = document.getElementById("input_label");
-//       x!.style.display = "none";
-//   }
-//   const[state,setState]=useState(labelss)
-//   const saveName = (e:any) => {
-//     const name=e.target.value;
-//     setState((e1:any)=>e1.name=name);
-//   };
-//   const saveMail = (e:any) => {
-//     const mail=e.target.value;
-//     setState((e1:any)=>e1.from=mail);
-//   };
-//   const saveColour = (e:any) => {
-//     const colour=e.target.value;
-//     setState((e1:any)=>e1.color=colour);
-//   };
-//   const addNewItem = (e:any) => {
-//     const copy = [...labelss];
-//     copy.push(state);
-//     e.setState(copy);
-//     e.setName("");
-//     e.setColour("");
-//     e.setMail("");
-//   };
-//   console.log(labelss);
-//   console.log(state);
-//   return(
-//       <div className = "input_label" id="input_label" style = {{display: "none"}}>
-//           <form className="input_form">
-//           <label>Label Name: <button className="close" onClick={close}>x</button></label><input type="text" name="label name" onChange={saveName}/>
-//           <br/>
-//           <label>Sender Email: </label><input type="text" name="sender" onChange={saveMail}/>
-//           </form>
-//           <label>Label Colour: </label><input type="text" name="colour" onChange={saveColour}/>
-//           <br/>
-//           <button className="submit_label_input" onClick={addNewItem}>Create Label</button>
-//       </div>
-//   )
-  
-// }
+if (loading) {
+  return <p>Loading...</p>
+}
 
   return (
 
@@ -131,7 +90,7 @@ function add_label(){
             <div className="feature-items" id="inbox" onClick={()=>setItem(item)}>
               <MailOutlinedIcon className="icons" />
               <span className="hidden-feature">Inbox</span>
-              <span className="no-message">6969</span>
+              <span className="no-message">{labels[2].messagesTotal}</span>
             </div>
 
             <div className="feature-items" id="starred">
@@ -152,7 +111,7 @@ function add_label(){
             <div className="feature-items" id="drafts">
               <DescriptionOutlinedIcon className='icons' />
               <span className="hidden-feature">Drafts</span>
-              <span className="no-message">69</span>
+              <span className="no-message">{labels[5].messagesTotal}</span>
             </div>
 
             <div className="feature-items" id="more">
@@ -172,17 +131,18 @@ function add_label(){
 
           </div>
           <div className='labelcontainer' >
-            {labelss.map((label) => {
+            {labels.map((label) => {
+              if (label.type==="user")
               return (
-                <div className='label-items' key={label.id} onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)} onClick={()=>filterItem(label.from)}>
+                <div className='label-items' key={label.id} onMouseOver={()=>setHover(true)} onMouseOut={()=>setHover(false)} onClick={()=>filterItem(label.name)}>
                 <div className='label-icon'>
-                <LabelIcon className="labelicon" style={{color:`${label.color}`}}/>
+                <LabelIcon className="labelicon" style={{color: "grey"}}/>
                 </div>
                 <div className='label-name' style={{ display: open?"flex":"none"}}>
                   {label.name}
                 </div>
                 <div className='count-unread'style={{ display: open||hover?"flex":"none"}}>
-                  {label.count}
+                  {label.messagesTotal}
                 </div>
                   {/* {hover? (
                       <div className='label-threedot'style={{ display: open?"flex":"none"}}>
@@ -190,6 +150,9 @@ function add_label(){
                       </div>):""} */}
                 </div>
               )
+              else {
+                return null;
+              }
             })}
           </div>
         </div>

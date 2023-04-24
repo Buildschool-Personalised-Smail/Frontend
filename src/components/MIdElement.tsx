@@ -7,6 +7,7 @@ import { AiOutlineRight, AiOutlineStar } from 'react-icons/ai';
 import LabelIcon from '@mui/icons-material/Label';
 import parseFrom1 from '../utils/parseFrom1';
 import Content from './content';
+import moment from "moment-timezone";
 
 // interface threadData {
 //   id: string;
@@ -22,7 +23,7 @@ import Content from './content';
 //   body: string;
 // }
 
-const MidElement = ({threadsLists,setOpen,open,setContent}:{threadsLists:any, setOpen:any, setContent:any,open:any}) => {
+const MidElement = ({threadsLists,setOpen,open,setContent, setFetcher}:{threadsLists:any, setOpen:any, setContent:any,open:any, setFetcher: React.Dispatch<React.SetStateAction<boolean>>}) => {
 //   const [gmailsMails, setGmailMails] = useState([]);
 //   const [threadsLists, setThreadLists] = useState<Array<Array<threadData>>>([]);
 //   const mails = async () => {
@@ -71,7 +72,7 @@ const MidElement = ({threadsLists,setOpen,open,setContent}:{threadsLists:any, se
             <input type="checkbox" />
             {/* <span className="material-icons"> redo</span>
           <span className="material-icons"> more_vert</span> */}
-            <div className="emailListsettingsLeft_icon">
+            <div className="emailListsettingsLeft_icon" onClick={()=> setFetcher(true)}>
               <span className="material-icons"> <MdOutlineRefresh /></span>
             </div>
             <div className="emailListsettingsLeft_icon">
@@ -82,7 +83,7 @@ const MidElement = ({threadsLists,setOpen,open,setContent}:{threadsLists:any, se
           <div className="emailList_settingsRight">
             <div className="mailListsettingsRight_icon">
               <span className="text_in_top_1">
-                <p>1-50 of 12,774</p>
+                <p>1-50 of 15,780</p>
               </span>
             </div>
             <div className="emailListsettingsRight_icon">
@@ -104,13 +105,13 @@ const MidElement = ({threadsLists,setOpen,open,setContent}:{threadsLists:any, se
                     <span className='objects1'><AiOutlineStar /></span>
                     {/* <span className='objects'><LabelIcon /></span> */}
                   </div>
-                  <div className='objects'>{parseFrom1(item[0].from)}</div>
+                  <div className='objects'>{parseFrom1(item[item.length-1].from)}</div>
 
                   <div className="emailRow__message">
-                    <span className="emailRow__description"><b>{item[0].subject}</b>-{item[0].snippet}</span>
+                    <span className="emailRow__description"><b>{item[item.length-1].subject}</b>-{item[item.length-1].snippet}</span>
                   </div>
 
-                  <p className="emailRow__time">{item[0].internal_date}</p>
+                  <p className="emailRow__time">{item[item.length-1].date.split(',')[1].trim().slice(0,12)}</p>
 
                 </div>
               )
